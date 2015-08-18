@@ -1,0 +1,429 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20deepamehta-2.0b8-rc4%20Erfolgs%20und%20Fehlerreport&In-Reply-To=%3Cb2c9aff369dd10069f7b4403a5fe218b%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000202.html">
+   <LINK REL="Next"  HREF="000204.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20deepamehta-2.0b8-rc4%20Erfolgs%20und%20Fehlerreport&In-Reply-To=%3Cb2c9aff369dd10069f7b4403a5fe218b%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport">jri at deepamehta.de
+       </A><BR>
+    <I>Mon Sep  1 18:26:49 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000202.html">[deepamehta-users] User-Accounts gehen wieder
+</A></li>
+        <LI>Next message: <A HREF="000204.html">[deepamehta-users] Wegen Spam: Wiki nur noch f&#252;r registrierte Nutzer beschreibbar
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#203">[ date ]</a>
+              <a href="thread.html#203">[ thread ]</a>
+              <a href="subject.html#203">[ subject ]</a>
+              <a href="author.html#203">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Liebe DeepaMehta-Nutzer,
+
+hier m&#246;chte ich endlich auf den sehr hilfreichen Erfolgs- und  
+Fehlerreport von Torsten eingehen.
+
+Torsten spricht hier durchweg relevante Punkte an, &#252;ber die ein  
+DeepaMehta-Neuling stolpern wird, insbesondere, wenn es um die  
+Webanwendungen geht. Der neue Installer von Enrico ist f&#252;r das  
+&quot;eigentliche&quot; DeepaMehta schon wunderbar, ben&#246;tigt im Bereich der  
+Webanwendungen aber noch einige Verbesserungen, die ich im Folgenden  
+anspreche. Hier hoffe ich, da&#223; Enrico Gelegenheit findet, weiter am  
+Installer zu arbeiten. Zu einigen der genannten Probleme wei&#223; ich noch  
+nicht, was die beste L&#246;sung ist. Hier hoffe ich auf gemeinsame  
+Diskussion, wobei alle Entwickler gefragt sind.
+
+Ich kann mir auch gut vorstellen, bald einen DeepaMehta-Stammtisch zu  
+veranstalten, zu dem alle DeepaMehta-Anwender eingeladen werden. Das  
+direkte Gespr&#228;ch ist doch manchmal effektiver, wenn es um soviele  
+Punkte aufeinmal geht. Zu diesem Stammtisch sollten dann mindestens  
+kommen: Torsten, Malte, Thilo, Martin, Enrico. Au&#223;erdem brauchen wir  
+einen Moderator, damit die Gespr&#228;che nicht aus dem Ruder laufen, d.h.  
+damit konkrete Beschl&#252;sse gefasst und Aktionen verabredet werden. Ich  
+w&#252;rde mich freuen, wenn es jemand in die Hand nimmt, solch einen  
+Stammtisch zu organisieren.
+
+Zuletzt m&#246;chte ich Torsten ermutigen, Fehlerreports auch in unseren  
+Bug-Tracker auf Berlios einzupflegen. Es w&#228;re zu schade, wenn sein  
+wertvolles Feedback im Mailinglisten-Archiv untergeht.
+
+
+On 26.07.2008, at 11:26, Torsten Ziegler wrote:
+
+&gt;<i> Hallo Liebes Deepamehta Team
+</I>&gt;<i>
+</I>&gt;<i> nach meinem ersten Hilferuf an J&#246;rg
+</I>&gt;<i> der prompt beantwortet wurde (Danke J&#246;rg und Malte)
+</I>&gt;<i> wollte ich euch gerne meine Erfahrungen weitergeben,
+</I>&gt;<i> in der Hoffnung die Bugreports helfen euch weiter deepamehta zu
+</I>&gt;<i> verbessern.
+</I>&gt;<i>
+</I>&gt;<i> Ich benutze die deepamehta-2.0b8-rc4
+</I>&gt;<i> - Die Standalone Version unter Windows (interne DB) funktioniert
+</I>&gt;<i>   einwandfrei.
+</I>&gt;<i> - Unter Debian 4 funktioniert die Standalone Version, ebenso wie die
+</I>&gt;<i>   Client Server Version einwandfrei mit der internen DB und mit mysql5
+</I>&gt;<i>   (mysql4 habe ich nicht getestet)
+</I>&gt;<i> - nur mit den Webapps habe ich noch ein paar Probleme, siehe unten
+</I>&gt;<i>
+</I>&gt;<i> Einen Fehler habe ich im Installer bemerkt und zwar wenn ich als DB
+</I>&gt;<i> mysql5 ausw&#228;hle und sowohl Deepamehta neu installiere, als auch die
+</I>&gt;<i> Movies Beispiele, dann wird nur eine der beiden Datenbanken angelegt.
+</I>&gt;<i> Ich muss dann ./run.sh install nochmal ausf&#252;hren und bei der Deepamehta
+</I>&gt;<i> DB Nein ausw&#228;hlen, damit die Movies DB erstellt wird.
+</I>
+Oh, dieser Fehler war mir nicht bekannt!
+
+=&gt; Enrico: ich w&#252;rde mich freuen, wenn Du Dir das Installer-Skript  
+nochmal ansehen k&#246;nntest und diesen Fehler ggf. beheben k&#246;nntest.
+
+&gt;<i> Auch ist es m&#246;glich wenn man die Webapps instaliert  die interne hsqlDB
+</I>&gt;<i> auszuw&#228;hlen, was dann nat&#252;rlich nicht funktionieren kann, das k&#246;nnte  
+</I>&gt;<i> man
+</I>&gt;<i> vielleicht gegenseitig ausschlie&#223;en im Installer oder im Readme noach
+</I>&gt;<i> erw&#228;hnen.
+</I>
+Ja, ich verstehe, was Du meinst. Bei der Konzeption des Install-Sktipts  
+haben wir das diskutiert, und uns entschlossen, HSQL auch dann  
+anzubieten, wenn die Webinterfaces &quot;aktiviert&quot; wurden, aus 2 Gr&#252;nden:
+
+1) Das vorrangige Ziel des Install-Skripts ist, DeepaMehta so schnell  
+und einfach in Betrieb zu nehmen -- und zwar das &quot;eigentliche&quot;  
+DeepaMehta (die Webinterfaces sind derzeit eher als &quot;Dreingabe&quot; resp.  
+&quot;Proof-of-Concept&quot; zu sehen). Die Integration von HSQL tr&#228;gt ganz  
+wesentlich zur einfachen Installation bei (eine manuelle  
+MySQL-Installation ist f&#252;r Normalanwender eine zu gro&#223;e H&#252;rde). Wir  
+haben uns gedacht: wenn der Nutzer beim Installieren &quot;aus Versehen&quot; die  
+Webinterfaces aktiviert (weil ihm vielleicht der Unterschied zwischen  
+dem grafischen DeepaMehta und den Webinterfaces noch garnicht klar ist)  
+soll er trotzdem HSQL ausw&#228;hlen k&#246;nnen um das eigentliche DeepaMehta  
+m&#246;glichst schnell sehen k&#246;nnen.
+
+2) Die Webinterfaces funktionieren ja auch mit HSQL. Sie funktionieren  
+aber nur, wenn nicht gleichzeitig DeepaMehta (Standalone oder Server)  
+l&#228;uft. Zumindest kann so auch ohne MySQL schonmal in die Webinterfaces  
+&quot;reingeschnuppert&quot; werden (was, zugegeben, etwas langweilig ist, da  
+gerade das Zusammenspiel DeepaMehta-Web interessant ist. Siehe TIPP  
+ganz am Ende dieser Mail).
+
+Im README haben wir versucht, den Anwender auf den richtigen Weg zu  
+f&#252;hren, indem wir in der Kurzanleitung f&#252;r die automatische  
+Installation geschrieben haben:
+
+&gt;&gt;<i> Wenn Beispielanwendungen oder Webfrontends installiert werden sollen,  
+</I>&gt;&gt;<i> f&#252;hre eine manuelle (Terminal-basierte) Installation durch, die im  
+</I>&gt;&gt;<i> anschlie&#223;enden Abschnitt &quot;Installation&quot; beschrieben ist.
+</I>
+... und dann bei der ausf&#252;hrlichen Anleitung f&#252;r die manuelle  
+Installation im Abschnitt &quot;Schritt 2: Installieren =&gt; Datenbank&quot;:
+
+&gt;&gt;<i> WICHTIG: Wenn DeepaMehta Webfrontends und die grafische  
+</I>&gt;&gt;<i> DeepaMehta-Oberfl&#228;che gleichzeitig auf einer Maschine benutzt werden  
+</I>&gt;&gt;<i> sollen, mu&#223; als Datenbank MySQL benutzt werden.
+</I>
+Jetzt zum n&#228;chsten Punkt:
+
+&gt;<i> F&#252;r die Webapps braucht es noch ein paar mehr Schreibrechte f&#252;r die  
+</I>&gt;<i> Ordner
+</I>&gt;<i> install/client/images install/client/documents install/client/icons
+</I>&gt;<i> (eventuell auch noch f&#252;r mehr ?) das h&#228;ngt nat&#252;rlich vom tomcat user ab
+</I>&gt;<i> und wer deepamehta installiert hat. Nach der Standradinstallation von
+</I>&gt;<i> deepamehta reichen die Berechtigungen jedenfalls noch nicht.
+</I>
+Ja, Du hast recht, das ist ein Fallstrick. Hier mu&#223; das Install-Skript  
+noch nachgebessert werden.
+
+=&gt; Enrico: ich w&#252;rde mich freuen, wenn Du das Installskript so  
+erweitern kannst, da&#223; automatisch User-Schreibrechte f&#252;r folgende  
+Verzeichnisse gesetzt werden:
+	install/client/backgrounds
+	install/client/documents
+	install/client/icons
+	install/client/images
+	install/client/webpages
+
+Es ist prim&#228;r das grafische DeepaMehta, das programmatisch in diesen  
+Verzeichnissen Dateien anlegt.
+
+&gt;<i> Das weitere bezieht sich auf Debian 4 (etch) und einen Tomcat 5.5 in  
+</I>&gt;<i> der
+</I>&gt;<i> Standardversion
+</I>&gt;<i> Bei Debian muss (sofern man nicht die policiy entsprechend anpasst) den
+</I>&gt;<i> security manager aussschalten unter:
+</I>&gt;<i> /etc/default/tomcat5.5: TOMCAT5_SECURITY=no
+</I>&gt;<i> ebenfalls dort empfielt es sich den headless modus zu w&#228;hlen (das hat
+</I>&gt;<i> bei mir Probleme mit der xalan lib behoben)
+</I>&gt;<i> /etc/default/tomcat5.5:  CATALINA_OPTS=&quot;-Djava.awt.headless=true&quot;
+</I>
+Danke f&#252;r den Security-Hinweis! In der Tat sind f&#252;r Tomcat-Anwendungen  
+unter Debian standardm&#228;&#223;ig Dateizugriffe nur innerhalb ihres  
+Anwendungsverzeichnis erlaubt. DeepaMehta-Webanwendungen greifen aber  
+auf Konfigurationsdateien (und weiteres) der DeepaMehta  
+&quot;Mutterinstallation&quot; zu.
+
+Wie das am besten gel&#246;st werden kann, wei&#223; ich noch nicht. Vielleicht  
+k&#246;nnte das DeepaMehta-Deploy-Skript beim Deployen einer Webanwendung  
+Tomcats Policy-Datei erg&#228;nzen, mit entsprechenden FilePermissions.
+
+=&gt; &#220;ber m&#246;gliche L&#246;sungen m&#246;chte ich gerne mit Entwicklern diskutieren.
+
+&gt;<i> Starten des Tomcats:
+</I>&gt;<i> -Die Integrierung der start Routinen in das run.sh script funktioniert
+</I>&gt;<i> bei Debian nicht, da die executables unter /usr/share/tomcat5.5 liegen,
+</I>&gt;<i> die webapps aber unter /var/lib/tomcat5.5 da m&#252;sste man entweder ein
+</I>&gt;<i> paar symlinks setzen, oder das Startscript ver&#228;ndern.
+</I>
+Ja, Du hast recht! Da es bei Debian kein gemeinsames &quot;Tomcat-Home&quot; f&#252;r  
+die Excecutables, Webapps, shared DeepaMehta-Libraries und Logfiles  
+gibt, funktioniert das DeepaMehta-Install-Skript hier nicht.
+
+Eine &quot;generische&quot; L&#246;sung (die nichts davon wissen mu&#223;, auf welcher  
+Plattform sie l&#228;uft) w&#228;re, das DeepaMehta-Install-Skript so zu  
+erweitern, da&#223; es nicht wie bisher nach _dem_ Tomcat-Home fragt,  
+sondern getrennt nach den 4 Tomcat-&quot;Hotspots&quot; (Excecutables, Webapps,  
+shared Libraries, Logfiles)
+
+=&gt; Auch hier m&#246;chte ich gerne mit Entwicklern &#252;ber m&#246;gliche L&#246;sungen  
+diskutieren.
+
+&gt;<i> - was funktioniert ist im Ordner install/client den Tomact zu starten
+</I>&gt;<i> mit /etc/init.d/tomcat5.5 start
+</I>&gt;<i>
+</I>&gt;<i> Ich bin ja blutiger Neuling in Bezug auf deepamehta und Java, aber das
+</I>&gt;<i> Hauptproblem sieht mir danach aus, dass die Konfigurationsfiles von  
+</I>&gt;<i> einem
+</I>&gt;<i> fest verdrahteten Verzeichnis gelesen werden. So sieht es jedenfalls in
+</I>&gt;<i> <A HREF="http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-">http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-</A> 
+</I>&gt;<i> rc4/develop/src/de/deepamehta/Configuration.java
+</I>&gt;<i> zusammen mit dem Aufruf in
+</I>&gt;<i> <A HREF="http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-">http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-</A> 
+</I>&gt;<i> rc4/develop/src/de/deepamehta/service/ApplicationServiceInstance.java
+</I>&gt;<i> Da der Arbeitspfad eines Servlets ja unbestimmt ist (er wird nur
+</I>&gt;<i> durch das Starten vom tomcat in einem bestimmten Verzeichnis bestimmt,
+</I>&gt;<i> was ja durch den workaround auch funktioniert aber auf einer shared  
+</I>&gt;<i> hosting
+</I>&gt;<i> Umgebung nicht m&#246;glich ist) m&#252;sste man die Konfiguration besser mit  
+</I>&gt;<i> getResource()
+</I>&gt;<i> einlesen. Siehe auch die Beschreibung unter:
+</I>&gt;<i> <A HREF="http://www.velocityreviews.com/forums/t131134-specifying-path-for-">http://www.velocityreviews.com/forums/t131134-specifying-path-for-</A> 
+</I>&gt;<i> file-to-be-read-by-servlet-with-tomcat.html
+</I>&gt;<i> Wie gesagt habe ich nicht wirklich Ahnung, und hoffe Euch durch meine
+</I>&gt;<i> Gedanken etwas zu helfen.
+</I>
+Du hast v&#246;llig recht. Da&#223; die DeepaMehta-Webanwendungen darauf  
+angewiesen sind, da&#223; Tomcat von einem bestimmten Verzeichnis aus  
+gestartet werden mu&#223;, ist ein &quot;quick-and-dirty-hack&quot; und f&#252;r  
+Produktionsumgebungen v&#246;llig unakzeptabel.
+
+Hintergrund: DeepaMehta-Webanwendungen m&#252;ssen z.B. auf  
+Konfigurationsdateien der DeepaMehta &quot;Mutterinstallation&quot; zugreifen (in  
+install/config), wissen aber nicht, wo diese liegt. (Die von Dir  
+erw&#228;hnte ServletContext.getResource()-Methode hilft hier nicht weiter,  
+da sie relativ zum ServletContext arbeitet, also nur Resourcen  
+_innerhalb_ der Webanwendung adressieren kann.)
+
+Es gibt bereits einen Weg, DeepaMehta-Webanwendungen zu starten, ohne  
+auf einen Tomcat-Neustart angewiesen zu sein. Dazu mu&#223;t Du allerdings  
+im Deployment-Descriptor der Anwendung (WEB-INF/web.xml) mitteilen, wo  
+die DeepaMehta-Installation liegt. Das geht mittels des  
+Servletcontext-Parameters &quot;home&quot;, z.B.:
+
+	&lt;context-param&gt;
+		&lt;param-name&gt;home&lt;/param-name&gt;
+		&lt;param-value&gt;/usr/local/deepamehta&lt;/param-value&gt;
+	&lt;/context-param&gt;
+
+Beachte: der absolute Pfad mu&#223; das DeepaMehta-Installationsverzeichnis  
+angeben (ab dem dann install/config liegt), _ohne_ Slash am Ende.
+
+=&gt; Auch hier m&#246;chte ich gerne mit Entwicklern &#252;ber m&#246;gliche L&#246;sungen  
+diskutieren.
+
+&gt;<i> Test der Webapplikationen (bezieht sich alles auf eine neue  
+</I>&gt;<i> Installation
+</I>&gt;<i> ohne &#196;nderung, tomcat gestartet von install/client aus)
+</I>&gt;<i>
+</I>&gt;<i> 1. dm-web
+</I>&gt;<i> scheint zu funktionieren, nur die
+</I>&gt;<i> url der icons sind local (<A HREF="file://..">file://..</A>)und nicht <A HREF="http://...">http://...</A> und k&#246;nnen
+</I>&gt;<i> deshalb nicht angezeigt werden
+</I>
+Hierf&#252;r gibt es eine L&#246;sung: Du kannst in DeepaMehta die Base-URL  
+einstellen, zu der relative Pfade (z.B. zu Bild-Dateien, die im  
+Propertypanel oder auch in den Webanwendungen) aufgel&#246;st werden. Gehe  
+dazu in DeepaMehta in den &quot;Administration&quot; Workspace, klicke den  
+&quot;CorporateWeb Settings&quot; Topic an, und gebe als &quot;Base URL&quot; z.B. ein:
+
+	<A HREF="http://www.mysite.de/deepamehta/install/client/">http://www.mysite.de/deepamehta/install/client/</A>
+
+Du mu&#223;t also das client-Verzeichnis angeben (_mit_ Slash am Ende). In  
+diesem findet dann z.B. die &quot;dm-web&quot; Anwendung das &quot;icons&quot; Verzeichnis.
+
+W&#228;hrend der DeepaMehta-Installation wird als &quot;Base URL&quot; standardm&#228;&#223;ig  
+eine file: URL eingetragen, was funktioniert, solange DeepaMehta Client  
+und Server resp. Webanwendungen auf der gleichen Maschine laufen.
+
+&gt;<i> 2. dm-browser
+</I>&gt;<i> funktioniert teilweise,
+</I>&gt;<i> a) wenn ich etwas editiere (Stift icon) und auf OK klicke kommt:
+</I>&gt;<i>
+</I>&gt;<i> de.deepamehta.DeepaMehtaException: no PARAM_SEPARATOR &quot;_&quot; found in  
+</I>&gt;<i> &quot;typeID&quot;
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.web.DeepaMehtaServlet.getWeakRelationParameters(D 
+</I>&gt;<i> eepaMehtaServlet.java:857)
+</I>&gt;<i>
+</I>&gt;<i> aber die &#196;nderung wird gespeichert.
+</I>&gt;<i> b) ebenso beim l&#246;schen (Papierkorb Icon) kommt die Fehlermeldung
+</I>&gt;<i>
+</I>&gt;<i> de.deepamehta.DeepaMehtaException: topic &quot;t-1001&quot; is missing in  
+</I>&gt;<i> corporate memory
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.ApplicationService.checkLiveTopic(ApplicationServ 
+</I>&gt;<i> ice.java:350)
+</I>&gt;<i>
+</I>&gt;<i> aber es wurde erfolgreich gel&#246;scht
+</I>&gt;<i> c) alle topicmap icons sind wieder local (<A HREF="file://....">file://....</A>) und k&#246;nnen
+</I>&gt;<i> deshalb nicht angezeigt werden
+</I>&gt;<i>
+</I>&gt;<i> 3. dm-topicmapviewer
+</I>&gt;<i> funktioniert teilweise, fast alle topicmaps sind aufrufbar,
+</I>&gt;<i> a) die topicmaps werden korrekt gerendert, aber sind wieder local
+</I>&gt;<i> (<A HREF="file://....">file://....</A>) und k&#246;nnen deshalb nicht angezeigt werden,
+</I>&gt;<i> darum kann ich nicht sagen, ob die picture map funktioniert
+</I>&gt;<i> b) als einizge gibt es bei der Users and Groups (t-workgroupmap) eine
+</I>&gt;<i> Exception
+</I>&gt;<i>
+</I>&gt;<i> org.apache.jasper.JasperException
+</I>&gt;<i> 	 
+</I>&gt;<i> org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServl 
+</I>&gt;<i> etWrapper.java:512)
+</I>&gt;<i>
+</I>&gt;<i> java.lang.NullPointerException
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.RelationalCorporateMemory.createPreparedStatement 
+</I>&gt;<i> (RelationalCorporateMemory.java:1935)
+</I>&gt;<i>
+</I>&gt;<i> 4. dm-search
+</I>&gt;<i> funktioniert teilweise,
+</I>&gt;<i> a) wieder locale Icons
+</I>&gt;<i> b) wenn ich auf einen user Zugreife kommt die Exception
+</I>&gt;<i>
+</I>&gt;<i> org.apache.jasper.JasperException
+</I>&gt;<i> 	 
+</I>&gt;<i> org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServl 
+</I>&gt;<i> etWrapper.java:512)
+</I>&gt;<i>
+</I>&gt;<i> java.lang.NullPointerException
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.RelationalCorporateMemory.createPreparedStatement 
+</I>&gt;<i> (RelationalCorporateMemory.java:1935)
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.RelationalCorporateMemory.queryBaseTopics(Relatio 
+</I>&gt;<i> nalCorporateMemory.java:1522)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 5. messageboard
+</I>&gt;<i> funktioniert vollst&#228;ndig
+</I>&gt;<i>
+</I>&gt;<i> 6. kompetenzstern
+</I>&gt;<i> funktioniert gar nicht, beim Aufruf kommt die Exception
+</I>&gt;<i>
+</I>&gt;<i> javax.servlet.ServletException: Servlet.init() for servlet  
+</I>&gt;<i> Kompetenzstern Servlet threw exception
+</I>&gt;<i> 	 
+</I>&gt;<i> org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.jav 
+</I>&gt;<i> a:105)
+</I>&gt;<i>
+</I>&gt;<i> java.lang.NullPointerException
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.ApplicationServiceInstance.&lt;init&gt;(ApplicationServ 
+</I>&gt;<i> iceInstance.java:66)
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.ApplicationServiceInstance.lookup(ApplicationServ 
+</I>&gt;<i> iceInstance.java:117)
+</I>&gt;<i> 	 
+</I>&gt;<i> de.deepamehta.service.web.DeepaMehtaServlet.init(DeepaMehtaServlet.java 
+</I>&gt;<i> :108)
+</I>&gt;<i> 	javax.servlet.GenericServlet.init(GenericServlet.java:211)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Danke f&#252;r Eure Arbeit und
+</I>&gt;<i> Liebe Gr&#252;&#223;e,
+</I>&gt;<i> Torsten
+</I>
+
+Auf die anderen Webanwendungen kann ich gerne sp&#228;ter eingehen. Der  
+obige &quot;Base URL&quot; Tipp wird auch bei manchen der anderen Webanwendungen  
+das Icon-Problem l&#246;sen.
+
+Zur Zeit ist die Webanwendungen &quot;dm-web&quot; am n&#252;tzlichsten. Die anderen  
+sind eher proof-of-concepts von bestimmten DeepaMehta-Funktionen.  
+&quot;dm-web&quot; ist das derzeit am besten ausgebaute generische Web-Frontend  
+zum Anzeigen/Suchen/Navigieren/Anlegen/&#196;ndern von Corporate Memory  
+Inhalten. Was &quot;dm-web&quot; weiterhin eindrucksvoll demonstriert, sind die  
+dynamischen Formular- und Informations-Generatoren, die auf den  
+DeepaMehta-Typdefinitionen operieren. Wenn z.B. in DeepaMehta eine neue  
+Property angelegt wird, erscheint diese sofort nach einem  
+Webbrowser-Reload auch im HTML-Formular oder auf einer  
+Topic-Info-HTML-Seite. TIPP: Damit diese Typdef-Synchronisation  
+zwischen grafischen DeepaMehta und Webanwendungen funktioniert, mu&#223; der  
+DeepaMehta-Server laufen, d.h. das grafische DeepaMehta im  
+Client/Server-Modus benutzt werden. Dann n&#228;mlich kommunizieren Tomcat  
+und DeepaMehta &#252;ber einen Socket (mit dem Monolithen geht das nicht, da  
+sind keine Sockets in Benutzung).
+
+Torsten, ich danke Dir sehr f&#252;r Deinen ausf&#252;hrlichen Report. Alle von  
+Dir erw&#228;hnten Punkte sind von gro&#223;er Relevanz. Du hast auch alle Punkte  
+sehr gut beschrieben. Ich sehe, da&#223; Du eine Menge Zeit investiert hast.  
+Danke!
+
+Mit der Hoffnung Dich trotz aller DeepaMehta-Unzul&#228;nglichkeiten als  
+Anwender zu behalten:
+
+Liebe Gr&#252;&#223;e
+J&#246;rg
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000202.html">[deepamehta-users] User-Accounts gehen wieder
+</A></li>
+	<LI>Next message: <A HREF="000204.html">[deepamehta-users] Wegen Spam: Wiki nur noch f&#252;r registrierte Nutzer beschreibbar
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#203">[ date ]</a>
+              <a href="thread.html#203">[ thread ]</a>
+              <a href="subject.html#203">[ subject ]</a>
+              <a href="author.html#203">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

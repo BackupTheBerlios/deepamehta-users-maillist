@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] DeepaMehta 3 ist gestartet!
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%203%20ist%20gestartet%21&In-Reply-To=%3C6ea2ead239c4378671632b9cc07c10a2%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000299.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] DeepaMehta 3 ist gestartet!</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%203%20ist%20gestartet%21&In-Reply-To=%3C6ea2ead239c4378671632b9cc07c10a2%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] DeepaMehta 3 ist gestartet!">jri at deepamehta.de
+       </A><BR>
+    <I>Sun Oct  4 03:41:10 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000299.html">[deepamehta-users] [deepamehta3] Warum alleine am Kern arbeiten?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#298">[ date ]</a>
+              <a href="thread.html#298">[ thread ]</a>
+              <a href="subject.html#298">[ subject ]</a>
+              <a href="author.html#298">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 02.10.2009, at 14:33, Urs Lerch wrote:
+
+&gt;<i> Hallo J&#246;rg,
+</I>&gt;<i>
+</I>&gt;<i> da ich jetzt meine Dissertation abgegeben habe w&#252;rde ich gerne meine
+</I>&gt;<i> Java Skills aktualisieren. (Nicht nur!) Deshalb w&#252;rde ich gerne an DM3
+</I>&gt;<i> mit entwickeln, m&#246;glichst von Beginn weg und mit Verantwortung in einem
+</I>&gt;<i> klar eingegrenzten Bereich. Hast du da was f&#252;r mich? Ist der Code - du
+</I>&gt;<i> hast ja anscheinend schon was - &#246;ffentlich zug&#228;nglich (Subversion?). 
+</I>&gt;<i> Ich
+</I>&gt;<i> f&#228;nde es zudem auch gut, wenn wir f&#252;r DM3 eine eigene Mailliste h&#228;tten.
+</I>&gt;<i> Ich hoffe, du findest bald m&#246;glichst Zeit f&#252;r eine Antwort!
+</I>&gt;<i>
+</I>&gt;<i> Gruss,
+</I>&gt;<i> Urs
+</I>
+
+Liebe DeepaMehta-Freunde,
+
+@Urs: Vielen Dank f&#252;r Deinen Ansto&#223;!
+
+Vor 5 Wochen habe ich mit der DeepaMehta 3 Entwicklung begonnen. Es 
+gibt bereits eine nutzbare Version.
+
+DeepaMehta 3 ist eine komplette Neuentwicklung. Es gibt keine 
+gemeinsame Codebasis zu DeepaMehta 2.
+
+In dieser Mail:
+- Technischer &#220;berblick
+- Aus Nutzersicht
+- Der Community-Plan
+- Was k&#246;nnen interessierte Entwickler und Anwender jetzt tun?
+- Wo findet die DeepaMehta 3 Kommunikation statt?
+
+
+=&gt; Technischer &#220;berblick:
+
+DeepaMehta 3 ist bisher komplett in JavaScript geschrieben und l&#228;uft 
+als AJAX- und jQuery getriebene Webanwendung direkt im Browser (ohne 
+Java). Die Topicmap-Darstellung &#252;bernimmt das HTML 5 Canvas Element. Im 
+Backend gibt es CouchDB, eine (JSON-)Dokument-basierte Datenbank mit 
+REST-Schnittstelle. DeepaMehta 3 benutzt derzeit keine Middleware. Die 
+komplette Anwendung (JavaScripts, CSS-Layouts) wird direkt aus CouchDB 
+heraus serviert und l&#228;uft clientseitig im Webbrowser. Weitere 
+serverseitige Funktionalit&#228;t, z.B. Mailversand, wird von CouchDB 
+Extensions erledigt. CouchDB Extensions k&#246;nnen in beliebigen 
+Programmiersprachen geschrieben werden und kommunizieren mit CouchDB 
+per Standard-I/O. In DeepaMehta 3 ist derzeit die (Java-basierte) 
+Lucene Volltext-Suchmaschine auf diese Weise an CouchDB angekoppelt.
+
+Das Besondere an CouchDB (ein Apache-Projekt) ist, da&#223; es aus der 
+Lotus-Tradition kommt, und Versionierung und Replikation bereits 
+eingebaut hat. Damit ist CouchDB pr&#228;destiniert f&#252;r kollaborative 
+Anwendungen, und auch f&#252;r Online-Offline-Betrieb. CouchDB arbeitet 
+nicht mit SQL, sondern mit einem Map-Reduce-Verfahren (das auch die 
+Google-Suchmaschine einsetzt). Dezentralit&#228;t und Skalierbarkeit wird 
+dadurch besonders gut unterst&#252;tzt. Wo der klassische DB-Entwickler 
+Tabellen und Indizes definiert und dann SQL-Anfragen darauf formuliert, 
+tut der CouchDB-Entwickler nichts von alledem. Der CouchDB-Entwickler 
+definiert haupts&#228;chlich Funktionen die den Index aktiv erstellen -- 
+Performance ist sozusagen vorprogrammiert. Der CouchDB-Entwickler 
+erstellt die Index-Funktonen in JavaScript (das serverseitig l&#228;uft). 
+D.h. da&#223; es f&#252;r alle 3 Ebenen -- DB-Logik, Anwendungslogik, und 
+Client-Logik -- nur noch eine einzige Sprache (JavaScript) und ein 
+einheitliches Datenmodell (JSON) gibt. Das macht CouchDB auch aus 
+Entwicklersicht meiner Meinung nach sehr attraktiv.
+
+Besonderes Augenmerk bei der DeepaMehta 3 Entwicklung wird auf einen 
+schlanken Kern in Verbindung mit einem Modul/Plugin Konzept gelegt. 
+3rd-Party Entwickler k&#246;nnen sowohl &quot;vertikale&quot; Anwendungsmodule, z.B. 
+Kalender oder Kontaktverwaltung entwickeln, als auch &quot;horizontale&quot; 
+Module, deren Funktionalit&#228;t sich durch alle Anwendungen zieht, z.B. 
+&quot;Time Machine&quot; oder &quot;Access Control&quot;. Auch spezifische GUI-Komponenten 
+werden durch Module bereitgestellt, z.B. das Canvas-basierte Topic Map 
+Widget oder ein Tree-Renderer/Editor.
+
+Derzeit stehen bereits 4 Plugins zur Verf&#252;gung, die optional 
+installiert werden k&#246;nnen:
+1) &quot;DM3 Time&quot; - F&#252;gt Dokumenten Zeitstempel hinzu und bietet eine 
+zeitbasierte Suche, quer durch alle Anwendungen.
+2) &quot;DM3 Workspaces&quot; - Strukturierungsmittel f&#252;r die Knowledge Base. 
+Jedes Topic ist von vornherein einem oder mehreren Workspaces 
+zugeordnet. Dienen sp&#228;ter auch als Shared Workspaces (Arbeitsgruppen), 
+wie in DeepaMehta 2.
+3) &quot;DM3 Contacts&quot; - Anwendung zur Kontaktverwaltung.
+4) &quot;DM3 Email&quot; - Mail Client. Rundmail-Funktion in Verbindung mit dem 
+DM3 Workspaces Plugin. Das Versenden von Mails wird in K&#252;rze 
+funktionieren. Das Empfangen von Mails steht noch aus.
+
+
+=&gt; Aus Nutzersicht:
+
+Es k&#246;nnen Topics und Relationen angelegt werden, und mit Inhalten 
+gef&#252;llt werden. Navigieren entlang der Relationen. Informationen sind 
+nicht mehr so stark fragmentiert wie bei DeepaMehta 2: wenn man z.B. 
+einen Contact-Topic anklickt, sieht man auf einen Blick alle relevanten 
+Angaben wie Adresse, Email, Telefon usw.
+
+Kollaboration. Zugriff und Bearbeiten einer Knowledge Base in den 
+Grundz&#252;gen bereits m&#246;glich. Konflikterkennung (noch keine -Aufl&#246;sung) 
+beim gleichzeitigen Editieren eines Topics. Abgleich einer lokalen 
+Knowledge Base mit einer zentralen Knowledge Base.
+
+Volltextsuche in allen Feldern eines Topics. Wortanfangssuche, 
+Phrasensuche. Zu Topics k&#246;nnen Dateien (Attachments) hochgeladen 
+werden. Volltextsuche auch in PDF, Word, Powerpoint, Excel-Dateien! 
+(via Lucene-Tika und Apache POI).
+
+Autocompletion. Je nach Anwendung macht DeepaMehta 3 beim Ausf&#252;llen von 
+Eingabefeldern Vorschl&#228;ge. Wenn z.B. in das &quot;To&quot; Feld einer Email 
+geschrieben wird, und die DM3 Contacts und DM3 Workspaces Plugins 
+installiert sind, werden Einzelkontakte und Arbeitsgruppen 
+vorgeschlagen.
+
+Es gibt noch keine Online-Installation, wo man DeepaMehta 3 einfach 
+ausprobieren kann. Derzeit ist die lokale Installation der einzige Weg 
+DeepaMehta 3 zu benutzen. Die Installation ist derzeit nicht einfach, 
+da einige Pakete (CouchDB, CouchApp, couchdb-lucene, Python, Java, Git) 
+installiert und z.T. konfiguriert werden m&#252;ssen.
+
+
+=&gt; Der Community-Plan:
+
+Derzeit gehe ich davon aus, da&#223; ich den DeepaMehta 3 Kern zun&#228;chst 
+alleine entwickle. Wesentlich dabei ist das Design der 
+Plugin/Modul-Schnittstellen. Als Grundlage f&#252;r den Community-Proze&#223; 
+sehe ich das beschriebene Plugin/Modul-Konzept. Jedes 
+Community-Mitglied kann Plugins/Module entwickeln. In Kommunikation mit 
+den Plugin/Modul-Entwicklern werde ich die Schnittstellen des 
+DeepaMehta 3 Kerns nach Bedarf erweitern oder anpassen, immer im 
+Hinblick auf zuk&#252;nftige Anwendungsf&#228;lle. Mit der Zeit (das kann in 
+einigen Monaten soweit sein) werden sich stabile Schnittstellen 
+herausbilden, auf deren Grundlage zuk&#252;nftige Plugin/Modul-Entwickler 
+aufsetzen k&#246;nnen, ohne Kontakt mit mir aufnehmen zu m&#252;ssen. Damit werde 
+ich nicht zum Flaschenhals, und das Projekt kann im gro&#223;en Ma&#223;stab 
+skalieren. Voraussetzung ist nat&#252;rlich eine vollst&#228;ndige Dokumentation 
+der Schnittstellen des DeepaMehta 3 Kerns.
+
+Weitere Aspekte des Community-Prozesses, m&#252;ssen sich noch finden, z.B. 
+nach welchen Regeln die Kommunikation mit dem Kernentwickler abl&#228;uft. 
+Sp&#228;ter ist denkbar, da&#223; langj&#228;hrige Plugin/Modul-Entwickler in die 
+Kernentwicklung einbezogen werden.
+
+Ein Bereich, in dem Entwickler sofort, und v&#246;llig unabh&#228;ngig vom 
+DeepaMehta 3 Kern arbeiten k&#246;nnen, ist die Entwicklung von CouchDB 
+Extensions, z.B. f&#252;r den Zugriff auf LDAP-Repositories oder andere 
+Netzwerkdienste. Diese CouchDB Extensions werden wahrscheinlich in der 
+DeepaMehta 3 Entwicklung noch eine gr&#246;&#223;ere Rolle spielen, denn 
+bestimmte Funktionalit&#228;t kann clientseitig nicht realisiert werden: 
+JavaScript hat z.B. keinen beliebigen Netzwerkzugriff.
+(M&#246;glicherweise wird auch in DeepaMehta 3 doch wieder eine Middleware 
+eingef&#252;hrt werden, aber das ist aus meiner Sicht im Moment noch v&#246;llig 
+unklar. Ich finde es spannend zu erfahren, wie weit der schlanke 
+Middleware-lose Ansatz von DeepaMehta 3 in Verbindung von CouchDB 
+Extensions tr&#228;gt.)
+
+
+=&gt; Was k&#246;nnen interessierte Entwickler und Anwender jetzt tun?
+
+Entwickler k&#246;nnten sich &#252;berlegen, welche Art von DeepaMehta 3 
+Plugin/Modul bzw. welche Art CouchDB Extension sie entwickeln wollen. 
+Dazu w&#228;re es zun&#228;chst notwendig sich ggf. in die Basistechnologien 
+einzuarbeiten: CouchDB, JavaScript, jQuery, DeepaMehta 3.
+
+Anwender (und Entwickler) m&#252;&#223;ten als erstes die DeepaMehta 3 
+Installation durchf&#252;hren. Die Erfahrungen, die sie dabei machen, w&#228;ren 
+hilfreich, um die DeepaMehta 3 Installationsanweisungen f&#252;r die 
+verschiedenen Plattformen zu erg&#228;nzen.
+
+
+=&gt; Wo findet die DeepaMehta 3 Kommunikation statt?
+
+Die DeepaMehta 3 Git-Repositories finden sich auf GitHub:
+<A HREF="http://github.com/jri">http://github.com/jri</A>
+Dort finden sich auch Installationsbeschreibungen und die 4 erw&#228;hnten 
+Plugins. Die HEAD Revision ist direkt installier- und nutzbar. In etwa 
+einem Monat wird es die 0.2 Release geben. Dann wird es dort im GitHub 
+Wiki auch die erste Dokumentation der DeepaMehta 3 Kern-Schnittstellen 
+geben. Auch der Issue-Tracker zu DeepaMehta 3 ist dort auf GitHub.
+
+Die Google Group zur weiteren Diskussion rund um DeepaMehta 3 gibt es 
+hier:
+<A HREF="http://groups.google.com/group/deepamehta3">http://groups.google.com/group/deepamehta3</A>
+Zu dieser Gruppe kann jeder beitreten. Sobald man beigetreten ist, kann 
+man &#252;ber die Website Postings machen, oder direkt per Mail an 
+<A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta3 at googlegroups.com</A> (diese erscheinen dann ebenfalls auf der 
+Website).
+
+Alle weiteren Infos und Diskussionen zu DeepaMehta 3 werden dort auf 
+GitHub und in der Google Group stattfinden. Bitte schickt in der Regel 
+keine Mails an mich pers&#246;nlich.
+
+Und nun bin ich gespannt auf das was kommt :)
+
+Gr&#252;&#223;e
+J&#246;rg
+
+www.deepamehta.de
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000299.html">[deepamehta-users] [deepamehta3] Warum alleine am Kern arbeiten?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#298">[ date ]</a>
+              <a href="thread.html#298">[ thread ]</a>
+              <a href="subject.html#298">[ subject ]</a>
+              <a href="author.html#298">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

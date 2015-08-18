@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Make interactive DeepaMehta topicmaps accessible	to everyone
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Make%20interactive%20DeepaMehta%20topicmaps%20accessible%0A%09to%20everyone&In-Reply-To=%3C9CD43828-28D3-4DB3-B7B8-090FA38E7E1B%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000329.html">
+   <LINK REL="Next"  HREF="000331.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Make interactive DeepaMehta topicmaps accessible	to everyone</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Make%20interactive%20DeepaMehta%20topicmaps%20accessible%0A%09to%20everyone&In-Reply-To=%3C9CD43828-28D3-4DB3-B7B8-090FA38E7E1B%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Make interactive DeepaMehta topicmaps accessible	to everyone">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Nov  3 17:15:19 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000329.html">[deepamehta-users] Vortrag &quot;Human Centric Software&quot; an der Uni	Potsdam, 3. November 2010
+</A></li>
+        <LI>Next message: <A HREF="000331.html">[deepamehta-users] Vortrag von Silvia Holzinger und Peter Haas (IL MARE FILM): &quot;SLOW BUDGET - 2.0 - Phase 2 des Unm&#246;glichen Dokumentarfilms&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#330">[ date ]</a>
+              <a href="thread.html#330">[ thread ]</a>
+              <a href="subject.html#330">[ subject ]</a>
+              <a href="author.html#330">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Nov 1, 2010, at 12:19, x28 wrote:
+
+&gt;<i> I would love to show to them my example thread
+</I>&gt;<i> <A HREF="http://www.flickr.com/photos/37794987@N00/2854506800/">http://www.flickr.com/photos/37794987@N00/2854506800/</A> in DeepaMehta,
+</I>&gt;<i> but after TWO years I still CAN'T (without urging them to install or
+</I>&gt;<i> register which they don't want, <A HREF="http://ple.elg.ca/course/moodle/mod/forum/discuss.php?d=458">http://ple.elg.ca/course/moodle/mod/forum/discuss.php?d=458</A>
+</I>
+
+Perhaps the DeepaMehta 2 &quot;Demo Mode&quot; would be helpful for you.
+It exists since DeepaMehta 2.0a8 (January 2001) but is not well documented.
+
+The &quot;Interactive Demos&quot; page is build on it (try out the &quot;History of Human-Computer Interface&quot; demo):
+www.deepamehta.de/install/client/demos.html
+
+About the DeepaMehta 2 Demo Mode:
+- allows you to make a DM2 topicmap accessible to everyone
+- for the demo user no software installation is required (just a Java-enabled webbrowser)
+- no registration is required
+- the demo user can:
+	- open a topicmap by visiting a webpage and pressing a button
+	- browse the topicmap
+	- arrange the topic geometry
+	- revealing (still invisible) related topics (!)
+- the topicmap is read-only:
+	- the demo user can't create or edit anything
+	- the topic geometry is not saved
+- once the demo user registers she might be able to make changes to the demo topicmap
+
+The purpose of the DeepaMehta 2 Demo Mode is to provide users a quick way to experience DeepaMehta interactively.
+
+
+Every user who is registered at www.deepamehta.de can setup a demo topicmap for public access. The demo topicmap can be embedded into your own website/blog by the means of a HTML snippet.
+
+To setup a demo topicmap for public access:
+1) Login to DM2 at www.deepamehta.de
+2) Create or import a topicmap
+3) Publish that topicmap to any (shared) workspace
+4) Embedd this HTML snippet in your webpage:
+
+	&lt;applet archive=&quot;DeepaMehtaClient.jar&quot; code=&quot;de.deepamehta.client.DeepaMehtaClient&quot; codebase=&quot;<A HREF="http://www.deepamehta.de/install/client/">http://www.deepamehta.de/install/client/</A>&quot; width=&quot;150&quot; height=&quot;30&quot;&gt;
+		&lt;param name=&quot;DEMO_MAP&quot; value=&quot;t-1147&quot;&gt;
+		&lt;param name=&quot;PORT&quot; value=&quot;7557&quot;&gt;
+		&lt;param name=&quot;BUTTON_LABEL&quot; value=&quot;Open Topicmap&quot;&gt;
+		&lt;param name=&quot;BACKGROUND_COLOR&quot; value=&quot;#ffffff&quot;&gt;
+	&lt;/applet&gt;
+
+This will create a litte &quot;Open Topicmap&quot; (or whatever you label it) button on your webpage.
+The only tricky thing here is the DEMO_MAP parameter. There you have to state the internal ID of your demo topicmap (t-1147 in this example). This ID is not exposed to the user interface but there are ways to determine it anyway (let me know if you need support at this point).
+
+5) Distribute the URL of your webpage to interested parties and instruct them to press the &quot;Open Topicmap&quot; button.
+
+So, this would be roughly the state of affairs when you want to provide any internet user instant access to your topicmaps.
+
+
+In DeepaMehta 3, making topicmaps publically accessible will become less cumbersome. As soon as the DM3 &quot;Access Control&quot; plugin is ready (within this year) there will be a server-hosted DM3 installation (like DM2) and an opportunity to directly address any topicmap by the means of an URL.
+
+
+Cheers,
+J&#246;rg
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000329.html">[deepamehta-users] Vortrag &quot;Human Centric Software&quot; an der Uni	Potsdam, 3. November 2010
+</A></li>
+	<LI>Next message: <A HREF="000331.html">[deepamehta-users] Vortrag von Silvia Holzinger und Peter Haas (IL MARE FILM): &quot;SLOW BUDGET - 2.0 - Phase 2 des Unm&#246;glichen Dokumentarfilms&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#330">[ date ]</a>
+              <a href="thread.html#330">[ thread ]</a>
+              <a href="subject.html#330">[ subject ]</a>
+              <a href="author.html#330">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

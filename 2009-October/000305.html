@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] DeepaMehta-Einsatz bei INKOBA /	www.wissenstechnologie.de
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta-Einsatz%20bei%20INKOBA%20/%0A%09www.wissenstechnologie.de&In-Reply-To=%3C3c74ddc1ab65970aad8a5b7158a0e9c5%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000304.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] DeepaMehta-Einsatz bei INKOBA /	www.wissenstechnologie.de</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta-Einsatz%20bei%20INKOBA%20/%0A%09www.wissenstechnologie.de&In-Reply-To=%3C3c74ddc1ab65970aad8a5b7158a0e9c5%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] DeepaMehta-Einsatz bei INKOBA /	www.wissenstechnologie.de">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Oct 28 17:32:35 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000304.html">[deepamehta-users] Heute Abend: Strange Songs For Strange People
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Lieber Reinhard,
+
+sch&#246;n, von Dir zu h&#246;ren!
+Da&#223; ihr bei INKOBA DeepaMehta einsetzt, freut mich.
+
+Hier m&#246;chte ich auf Deine Fragen eingehen und Dir Infos zum Stand der 
+DeepaMehta-Entwicklung geben.
+
+
+On 23.10.2009, at 12:53, RBO E-Mailkonto wrote:
+
+&gt;<i> Hallo lieber J&#246;rg Richter
+</I>&gt;<i> nach den vielen Jahren in denen wir keinen Kontakt hatten
+</I>&gt;<i> hoffe ich, dass es Dir heute gut geht.
+</I>&gt;<i> &#160;
+</I>&gt;<i> Dass es Deinem DeepaMehta-Baby und der&#160;Community gut geht,
+</I>&gt;<i> nehme ich einfach mal&#160;an.
+</I>&gt;<i> &#160;
+</I>&gt;<i> Ich bin immer noch an meiner Wissenstechnologie 
+</I>&gt;<i> www.wissenstechnologie.de
+</I>&gt;<i> dran und nutze DeepaMehta als ein Basisprodukt f&#252;r Wissenstechnologie.
+</I>&gt;<i> &#160;
+</I>&gt;<i> Meine Basisprodukte nennen sich Cockpits ... Computer Cockpits ... 
+</I>&gt;<i> Cockpit Server usw.
+</I>&gt;<i> &#160;
+</I>&gt;<i> Jetzt habe ich mit Unterst&#252;tzung eines Informatikers mit dm einen 
+</I>&gt;<i> Cockpit Server
+</I>&gt;<i> auf XP und linux aufgebaut. &#220;ber die Arbeitstechniken der 
+</I>&gt;<i> Wissenstechnologie wie
+</I>&gt;<i> zum Beispiel (a) Agendatechniken, (b) Konservierungtechniken, (c) 
+</I>&gt;<i> Reflektionstechniken usw.
+</I>&gt;<i> wird dm in Projekten zu praktischen Arbeitsmitteln gestaltet.
+</I>&gt;<i> &#160;
+</I>&gt;<i> Jetzt sind einige offene Fragen aufgelaufen, f&#252;r die ich gern 
+</I>&gt;<i> Antworten h&#228;tte.
+</I>&gt;<i> &#160;
+</I>&gt;<i> K&#246;nntest Du mir helfen? Solche Fragen sind zum Beispiel:
+</I>&gt;<i>
+</I>&gt;<i> (1) Offene Frage: Wieviel Benutzerverbindungen kann ein dm-Server 
+</I>&gt;<i> gleichzeitig bew&#228;ltigen? (50 ... 150 ... 200)
+</I>
+Hier gibt es keine eindeutige Antwort bzw. wir haben nicht genug 
+Erfahrung d.h. keine genauen Messungen gemacht.
+
+Tats&#228;chlich ist der Server aber derzeit k&#252;nstlich auf 50 gleichzeitige 
+Verbindungen beschr&#228;nkt (wenn ich mich recht erinnere). Diese Zahl l&#228;&#223;t 
+sich durch Neucompilierung leicht &#228;ndern.
+
+Eine prinzipielle Grenze gibt es im Prinzip nicht. Bei mehreren 
+gleichzeitig aktiven Benutzern werden die Antwortzeiten l&#228;nger. Jeder 
+Klick des Benutzers l&#246;st ja eine eine Server-Aktion aus. Die gef&#252;hlte 
+Performance h&#228;ngt von vielen Faktoren ab: Aktivit&#228;t der Benutzer, 
+Speicher und CPU-Ausstattung des Servers. Neztwerkbandbreite zwischen 
+Client und Server.
+
+Meine Einsch&#228;tzung: bevor die Anzahl der Clients zu einer tats&#228;chlichen 
+Einschr&#228;nkung wird, werden andere Einschr&#228;nkungen von DeepaMehta zum 
+Tragen kommen, insbesondere beim kollaborativen Arbeiten mit parallelen 
+Schreibzugriffen, denn, in DeepaMehta 2 gibt es keine Versionierung und 
+keine Konflikterkennung.
+ACHTUNG: wenn gleichzeitig an einem Topic gearbeitet wird, k&#246;nnen 
+Inhalte verloren gehen!
+
+&gt;<i> (2) Offene Frage: Welche Erfahrungen liegen hinsichtlich der 
+</I>&gt;<i> Gleichzeitigkeit vor? (Wichtig f&#252;r Auslegung der Anzahl einzusetzender 
+</I>&gt;<i> Cockpit Server (dm) in einem System)
+</I>
+Gleichzeitigkeit unter Peformance-Gesichtspunkt: s.o.
+Gleichzeitigkeit konkurrierender Schreibzugriffe (s.o.): hier gibt es 
+in DeepaMehta 2 derzeit keine technische L&#246;sung. Die L&#246;sung m&#252;&#223;te auf 
+organiationeller Ebene stattfinden, durch Verteilung von 
+Zust&#228;ndigkeiten. Wer ist f&#252;r die Inhalte-Erstellung von Topic X 
+zust&#228;ndig?
+
+&gt;<i> (3) Offene Frage: Welche Bedeutung haben welche Ordner (grob), zum 
+</I>&gt;<i> Beispiel welche sind Client-Dateien, welche sind Server-Dateien und 
+</I>&gt;<i> welche sind Webanwendungs-Dateien
+</I>
+Zun&#228;chst: auf den Clientrechnern werden keinerlei Dateien abgelegt. Der 
+DeepaMeha-Client wird vom Server geladen und l&#228;uft direkt im 
+Webbrowser.
+
+Wenn es Dir um die Entwicklersicht geht: f&#252;r die Java-Packages gilt:
+	de.deepamehta - wird vom Client &amp; Server ben&#246;tigt
+	de.deepamehta.client - wird vom Client ben&#246;tigt
+	de.deepamehta.topics - wird vom Server ben&#246;tigt
+	de.deepamehta.service - wird vom Server ben&#246;tigt
+	de.deepamehta.service.web - wird f&#252;r die Web-Interfaces ben&#246;tigt
+
+Die API-Dokumentation findest Du hier:
+www.deepamehta.de/docs/apidocs/
+
+Konzeptionelle Dokumenation f&#252;r Entwickler gibt es auf 
+www.deepamehta.de -&gt; Documentation -&gt; Developer Documentation
+
+&gt;<i> (4) Offene Frage: Gibt es eine Option, ein Sortiment von 
+</I>&gt;<i> Topic-Map-Typen zu verwalten und dieses Nutzern zur Verf&#252;gung zu 
+</I>&gt;<i> stellen (einblenden, wenn ein neues Objekt f&#252;r eine Mappe erstellt 
+</I>&gt;<i> werden soll)
+</I>&gt;<i>
+</I>&gt;<i> Beipsiel solcher Sortimente sind: Sortiment Topic-Map-Typen f&#252;r 
+</I>&gt;<i> Datennetzplaner, Sortiment Topic-Map-Typen f&#252;r Controller, Sortiment 
+</I>&gt;<i> Topic-Map-Typen f&#252;r Gesch&#228;ftsf&#252;hrer usw ...&#160;
+</I>
+Ja, auch der Typ &quot;Topic Map&quot; kann durch Vererbung spezialisiert werden. 
+Z.B. macht die mitgelieferte Beispielanwendung &quot;Kompetenzstern&quot; davon 
+Gebrauch (ein Kompetenzstern ist eine spezielle Topic Map, mit einer 
+generierten Hintergrundgrafik und spezieller Topic-Geometrie). 
+Spezielle Topic-Map-Typen kannst Du den Nutzern zur Verf&#252;gung stellen, 
+indem Du eine Assoziation vom Typ &quot;Type Access&quot; von dem Workspace (in 
+dem der Nutzer Mitglied ist) zu dem Map-Typen ziehst, und deren &quot;Access 
+Permission&quot; Eigenschaft auf &quot;Create in Workspace&quot; setzt. Ab diesem 
+Moment taucht im Kontext-Menu des Personal Workspace des Nutzers neben 
+dem &quot;Create Topicmap&quot;-Kommando ein weiteres Create-Kommando auf, z.B. 
+&quot;Create Kompetenzstern&quot;.
+
+Die Definition eines speziellen Topic-Map-Typen ist meistens mit der 
+Custom-Implementierung verbunden, d.h. dem Topic-Map-Typ wird eine 
+Java-Klasse hinterlegt, in der die Spezial-Funktionalit&#228;t programmiert 
+ist.
+
+Allgemeine Information zur Definition von Topic-Typen und deren 
+Zuordnung zu Workspaces (Access Control) findest Du im DeepaMehta User 
+Guide in den Kapiteln 3 und 4:
+www.deepamehta.de/wiki/en/User_Guide
+
+&gt;<i> Ein weiteres Problem ist bei einer linux-Installation aufgetreten. 
+</I>&gt;<i> Hier kommt bei Coose immer eine Vogelstimme ... es &#246;ffnet sich aber 
+</I>&gt;<i> kein Verzeichnis.
+</I>
+Ohne weitere Information ist es schwierig hier zu helfen.
+Ich nehme an, da&#223; Du &quot;Choose&quot; meinst, zum Ausw&#228;hlen einer Datei. Mit 
+der Vogelstimmt ist auch immer ein blinkendes Symbol verbunden. Klicke 
+auf das Symbol, und Du erh&#228;lst weitere Informationen. Wahrscheinlich 
+ist das ein Sicherheitsthema.
+
+Grunds&#228;tzlich gilt: der normale DeepaMehta Client hat (aus 
+Sicherheitsgr&#252;nden) keinerlei Zugriff auf die Festplatte des 
+Clientrechners. Wenn Du das explizit erlauben willst, mu&#223;t Du den 
+signierten DeepaMehta Client benutzen.
+
+Ein Beispiel daf&#252;r:
+www.deepamehta.de/install/client/signed.html
+
+Hier findest Du in der HTML Source auch den entsprechenden &lt;object&gt; 
+Tag, mit dem der signierte Client in Deine Seite eingebunden wird.
+
+&gt;<i> Nun gut, es w&#228;re sch&#246;n, wenn wir wieder mal miteinander telefonieren. 
+</I>&gt;<i> Ich bin gespannt, was Du so alles zu berichten hast.
+</I>
+Zum Stand der DeepaMehta-Entwicklung:
+DeepaMehta 2 wurde &#252;ber 9 Jahre lang entwickelt, entsprechend alt ist 
+die Basistechnologie. Inzwischen ist sozusagen das nat&#252;rliche Ende 
+dieses Entwicklungszweiges eingetreten.
+
+Ganz frisch, seit etwa 2 Monaten ist DeepaMehta 3 in Entwicklung. Das 
+wird eine komplette Neuentwicklung, die die Erfahrungen der letzten 
+Jahre mit der Technik von heute kombiniert.
+
+Ein fr&#252;her Entwicklungsstand ist bereits nutzbar. DeepaMehta 3 ist nach 
+wie vor Freie Software. Die Entwicklung ist hier einsehbar:
+<A HREF="http://github.com/jri">http://github.com/jri</A>
+
+Die Diskussion zu DeepaMehta 3 findet hier statt:
+<A HREF="http://groups.google.com/group/deepamehta3">http://groups.google.com/group/deepamehta3</A>
+
+Derzeit sind wir mit F&#246;rderantr&#228;gen besch&#228;ftigt. Mit dem Wechsel von 
+DeepaMehta 2 zu DeepaMehta 3 wird das Projekt auch von der 
+Enthusiastenphase in die Professionalisierungsphase &#252;bergehen.
+
+
+=&gt; Lieber Reinhard, bitte nutze zum weiteren Austausch die 
+deepamehta-users Mailingliste (&#252;ber www.deepamehta.de erreichbar). 
+Sobald Du diese Liste subscribed hast, kannst Du Mails an die Liste 
+schicken. Dann erh&#228;lst Du m&#246;glicherweise schnellere und vielseitigere 
+Antwort, denn dann ist die DeepaMehta Community miteinbezogen. Ich kann 
+nicht pers&#246;nlich auf alle Nutzeranfragen eingehen.
+
+Als &quot;Startschu&#223;&quot; schicke ich diese Mail auch an die deepaMehta-users 
+Mailingliste.
+
+Apropos: als langj&#228;hriger Anwender, sogar im professionellem Kontext, 
+sehe ich Dich (und INKOBA) als implizites Mitglied der DeepaMehta 
+Community. Hast Du Interesse, Dich und Deine Mitstreiter auf der 
+DeepaMehta Community-Seite vorzustellen? Ich w&#252;rde das begr&#252;&#223;en. Ich 
+w&#252;rde Dir dann mitteilen, welche Infos ich von euch br&#228;uchte.
+www.deepamehta.de/docs/humans.html
+
+Die Community ist auch daran interessiert zu erfahren, in welchen 
+Anwendungsbereichen DeepaMehta eingesetzt wird, und auf welche Weise. 
+Wir w&#252;rden uns freuen, wenn Du euren DeepaMehta-Einsatz und eure 
+Erfahrungen auf der deepaMehta-users Mailingliste beschreibst. Dann 
+w&#228;re eure Nutzung bei INKOBA auch bei uns auf dem Schirm, und wir 
+w&#252;rden den Hintergrund Deiner Fragen besser verstehen und k&#246;nnten 
+m&#246;glicherweise besser darauf eingehen.
+
+&gt;<i> Dir ein sch&#246;nes WE und
+</I>&gt;<i> herzliche Gr&#252;&#223;e aus M&#252;hlhausen in Th&#252;ringen
+</I>&gt;<i> (Das Gartenhaus steht noch ...)
+</I>
+Ich habe eine sch&#246;ne Erinnerung an unsere Tage in M&#252;hlhausen. Besonders 
+ist mir auch ein Telefongespr&#228;ch in Erinnerung, in dem Du erz&#228;hlst 
+hast, da&#223; Dir DeepaMehta erm&#246;glicht -- ganz nach Kant -- das &quot;Ding an 
+sich&quot; und das &quot;Ding f&#252;r sich&quot; zu betrachten.
+
+Alles Gute f&#252;r Dich und Deine Familie
+
+Gr&#252;&#223;e
+J&#246;rg R.
+
+www.deepamehta.de
+
+
+&gt;<i> Reinhard Boltin
+</I>&gt;<i> _________________________________________________________________
+</I>&gt;<i> INKOBA Projekt &amp; Service
+</I>&gt;<i> Johannisstra&#223;e 100
+</I>&gt;<i> 99974 M&#252;hlhausen
+</I>&gt;<i> www.inkoba.de
+</I>&gt;<i> Tel.: 03601 856907
+</I>&gt;<i> Mobil.: 015155776023
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: unknown.gif
+Type: image/gif
+Size: 6152 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20091028/2d261396/attachment.gif">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20091028/2d261396/attachment.gif</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: unknown.jpg
+Type: image/jpeg
+Size: 10699 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20091028/2d261396/attachment.jpg">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20091028/2d261396/attachment.jpg</A>&gt;
+-------------- next part --------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000304.html">[deepamehta-users] Heute Abend: Strange Songs For Strange People
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

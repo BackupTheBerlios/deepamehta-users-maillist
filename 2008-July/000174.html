@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Frage bez&#252;glich Import Export
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%09%3D%3Fiso-8859-15%3Fq%3FFrage_bez%3DFCglich_Import_Expor%3F%3D%20%3D%3Fiso-8859-15%3Fq%3Ft%3F%3D&In-Reply-To=%3C489049C5.3030807%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000173.html">
+   <LINK REL="Next"  HREF="000175.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Frage bez&#252;glich Import Export</H1>
+    <B>Malte Rei&#223;ig</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%09%3D%3Fiso-8859-15%3Fq%3FFrage_bez%3DFCglich_Import_Expor%3F%3D%20%3D%3Fiso-8859-15%3Fq%3Ft%3F%3D&In-Reply-To=%3C489049C5.3030807%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Frage bez&#252;glich Import Export">mre at deepamehta.de
+       </A><BR>
+    <I>Wed Jul 30 13:00:21 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000173.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+        <LI>Next message: <A HREF="000175.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Torsten,
+
+danke f&#252;r dein Wiki Eintrag!
+
+....
+...
+
+&gt;<i> Ich werde wohl viel mit Import/Export arbeiten, da ich oft
+</I>&gt;<i> mit dem Laptop ohne Netzwerk arbeite (dann Hsql Datenbank),
+</I>&gt;<i> dann aber wieder auch online (Mysql5 Datenbank) Sachen
+</I>&gt;<i> darstellen m&#246;chte (in Zuklunft hoffentlich mit einem Webinterface)
+</I>
+Hier liegt im Moment auch mein Interessengebiet, da k&#246;nnten wir uns
+ja nochmal austauschen.
+
+&gt;<i> Und zwar habe ich mir neue Typen abgeleitet, diesmal
+</I>&gt;<i> vom Topic Typ und das funktioniert sehr sch&#246;n, andere
+</I>&gt;<i> Farben und zus&#228;tzliche Eingabefelder.
+</I>&gt;<i> Auf der Map, wo ich die erstellt habe sind die meisten
+</I>&gt;<i> Verbindungen sichtbar, aber eine Derivation vom Topic type
+</I>&gt;<i> zu einem meiner Subtypen hatte ich ausgeblendet.
+</I>&gt;<i> 
+</I>&gt;<i> Diese Map der neuen Typen habe ich jetzt exportiert und in
+</I>&gt;<i> meiner anderen Instanz importiert, mit dem Ergebnis, dass
+</I>&gt;<i> ich nur mit den Typen arbeiten kann, wo alles sichtbar war.
+</I>&gt;<i> Bei denen, wo z.b. die Derivation ausgebelndet war fahlt jetzt
+</I>&gt;<i> die Verbindung zum Topic Typ ganz und deshalb funktioniert
+</I>&gt;<i> auch der neue Typ nicht.
+</I>&gt;<i> Ist dies ein Bug, das nur sichtbares exportiert wird, oder
+</I>&gt;<i> ein Feature das ich noch nicht verstehe ?
+</I>
+Tats&#228;chlich greift die TopicMap-Exportfunktion nur f&#252;r alle
+sichtbaren Topics und Assoziationen, das ist der Stand der
+Entwicklung. Zus&#228;tzlich ist es auch noch nicht so einfach Workspaces
+zu ex- und importieren ohne das die Funktionalit&#228;t verloren geht,
+diese m&#252;ssen in der &quot;Import-Instanz&quot; wieder manuell angelegt mit den
+Typen verdrahtet werden.
+
+&gt;<i> Irgendwie bin ich davon ausgegangen, dass unterliegende
+</I>&gt;<i> Voraussetzungen f&#252;r eine Topic Map aus dem Corporate
+</I>&gt;<i> Memory mit exportiert w&#252;rden.
+</I>&gt;<i> Zum Beispiel habe ich auf einer Topic Map eine &#220;bersicht &#252;ber
+</I>&gt;<i> andere Topic Maps erstellt. Wenn ich die nun in der Hirarchie
+</I>&gt;<i> Top-Down exportiere und umgelehrt importiere funktioniert es,
+</I>&gt;<i> importiere ich sie jedoch ebenfalls Top-Down habe ich f&#252;r die
+</I>&gt;<i> Detail Topic Maps jeweils eine leere Version in der &#220;bersicht und
+</I>&gt;<i> eine gef&#252;llte Version in meinem Arbeitsbereich.
+</I>
+Interessant das habe ich auch noch nicht ausprobiert, es
+funktioniert also wenn du mehrere Maps exportierst und diese
+Bottom-Up importierst.
+
+&gt;<i> Dieses Prinzip immer nur sichtbares zu exportieren und auch keine
+</I>&gt;<i> eineindeutigen Namen beim export/import zuzuordnen macht es
+</I>&gt;<i> allerdings unm&#246;glich verschachtelte Topic Maps (das Detail
+</I>&gt;<i> verweist wieder auf die &#220;bersicht zur&#252;ck) zu importieren.
+</I>&gt;<i> Oder gibt es da auch wieder einen Trick dazu ??
+</I>
+Ein verschachtelter TopicMap Im- und Export ist leider auch nicht
+Stand der Dinge, deine bedachte Art die Sichten einzelnd zu
+exportieren und dann in der richtigen Reihenfolge zu importieren ist
+momentan der einzige Weg. Zus&#228;tzlich werden Inhalte die vom selben
+Typ sind und den selben Namen haben im vorhandenen Corporate Memory
+ohne Warnung mit den Neu-Importierten Daten &#252;berschrieben.
+
+&gt;<i> Wenn ich das Konzept verstanden habe m&#252;sste ich eigentlich nicht
+</I>&gt;<i> nur eine Topic Map (also meinen View) exportieren, sondern den Inhalt
+</I>&gt;<i> des Corporate Memories bez&#252;glich eines Workspaces ....?
+</I>&gt;<i>
+</I>
+Ich denke das eine Export-Policy nicht direkt auf der Hand liegt.
+Tats&#228;chlich w&#252;rde es viell. Sinn machen auch ganze
+&quot;Anwendungs-Dom&#228;nen&quot; exportieren zu k&#246;nnen und nicht nur einzelne
+Sichten.
+
+&gt;<i>
+</I>&gt;<i> Schon mal vielen Dank
+</I>&gt;<i> und liebe Gr&#252;&#223;e
+</I>&gt;<i> Torsten
+</I>&gt;<i> 
+</I>
+Gern geschehen.
+Gru&#223; zur&#252;ck!
+
+-- 
+______________________
+www.deepamehta.de/~mre
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">mre at deepamehta.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">mre at jabber.ccc.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000173.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+	<LI>Next message: <A HREF="000175.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

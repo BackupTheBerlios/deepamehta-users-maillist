@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20deepamehta-2.0b8-rc4%20Erfolgs%20und%20Fehlerreport&In-Reply-To=%3C488AEDB7.5060404%40ziegi.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000170.html">
+   <LINK REL="Next"  HREF="000172.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport</H1>
+    <B>Torsten Ziegler</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20deepamehta-2.0b8-rc4%20Erfolgs%20und%20Fehlerreport&In-Reply-To=%3C488AEDB7.5060404%40ziegi.de%3E"
+       TITLE="[deepamehta-users] deepamehta-2.0b8-rc4 Erfolgs und Fehlerreport">torsten at ziegi.de
+       </A><BR>
+    <I>Sat Jul 26 11:26:15 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000170.html">[deepamehta-users] deepamehta.de is down
+</A></li>
+        <LI>Next message: <A HREF="000172.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#171">[ date ]</a>
+              <a href="thread.html#171">[ thread ]</a>
+              <a href="subject.html#171">[ subject ]</a>
+              <a href="author.html#171">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo Liebes Deepamehta Team
+
+nach meinem ersten Hilferuf an J&#246;rg
+der prompt beantwortet wurde (Danke J&#246;rg und Malte)
+wollte ich euch gerne meine Erfahrungen weitergeben,
+in der Hoffnung die Bugreports helfen euch weiter deepamehta zu
+verbessern.
+
+Ich benutze die deepamehta-2.0b8-rc4
+- Die Standalone Version unter Windows (interne DB) funktioniert
+  einwandfrei.
+- Unter Debian 4 funktioniert die Standalone Version, ebenso wie die
+  Client Server Version einwandfrei mit der internen DB und mit mysql5
+  (mysql4 habe ich nicht getestet)
+- nur mit den Webapps habe ich noch ein paar Probleme, siehe unten
+
+Einen Fehler habe ich im Installer bemerkt und zwar wenn ich als DB
+mysql5 ausw&#228;hle und sowohl Deepamehta neu installiere, als auch die
+Movies Beispiele, dann wird nur eine der beiden Datenbanken angelegt.
+Ich muss dann ./run.sh install nochmal ausf&#252;hren und bei der Deepamehta
+DB Nein ausw&#228;hlen, damit die Movies DB erstellt wird.
+
+Auch ist es m&#246;glich wenn man die Webapps instaliert  die interne hsqlDB
+auszuw&#228;hlen, was dann nat&#252;rlich nicht funktionieren kann, das k&#246;nnte man
+vielleicht gegenseitig ausschlie&#223;en im Installer oder im Readme noach
+erw&#228;hnen.
+
+F&#252;r die Webapps braucht es noch ein paar mehr Schreibrechte f&#252;r die Ordner
+install/client/images install/client/documents install/client/icons
+(eventuell auch noch f&#252;r mehr ?) das h&#228;ngt nat&#252;rlich vom tomcat user ab
+und wer deepamehta installiert hat. Nach der Standradinstallation von
+deepamehta reichen die Berechtigungen jedenfalls noch nicht.
+
+
+Das weitere bezieht sich auf Debian 4 (etch) und einen Tomcat 5.5 in der
+Standardversion
+Bei Debian muss (sofern man nicht die policiy entsprechend anpasst) den
+security manager aussschalten unter:
+/etc/default/tomcat5.5: TOMCAT5_SECURITY=no
+ebenfalls dort empfielt es sich den headless modus zu w&#228;hlen (das hat
+bei mir Probleme mit der xalan lib behoben)
+/etc/default/tomcat5.5:  CATALINA_OPTS=&quot;-Djava.awt.headless=true&quot;
+
+Starten des Tomcats:
+-Die Integrierung der start Routinen in das run.sh script funktioniert
+bei Debian nicht, da die executables unter /usr/share/tomcat5.5 liegen,
+die webapps aber unter /var/lib/tomcat5.5 da m&#252;sste man entweder ein
+paar symlinks setzen, oder das Startscript ver&#228;ndern.
+- was funktioniert ist im Ordner install/client den Tomact zu starten
+mit /etc/init.d/tomcat5.5 start
+
+Ich bin ja blutiger Neuling in Bezug auf deepamehta und Java, aber das
+Hauptproblem sieht mir danach aus, dass die Konfigurationsfiles von einem
+fest verdrahteten Verzeichnis gelesen werden. So sieht es jedenfalls in
+<A HREF="http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-rc4/develop/src/de/deepamehta/Configuration.java">http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-rc4/develop/src/de/deepamehta/Configuration.java</A>
+zusammen mit dem Aufruf in
+<A HREF="http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-rc4/develop/src/de/deepamehta/service/ApplicationServiceInstance.java">http://svn.berlios.de/svnroot/repos/deepamehta/tags/deepamehta-2.0b8-rc4/develop/src/de/deepamehta/service/ApplicationServiceInstance.java</A>
+Da der Arbeitspfad eines Servlets ja unbestimmt ist (er wird nur
+durch das Starten vom tomcat in einem bestimmten Verzeichnis bestimmt,
+was ja durch den workaround auch funktioniert aber auf einer shared hosting
+Umgebung nicht m&#246;glich ist) m&#252;sste man die Konfiguration besser mit getResource()
+einlesen. Siehe auch die Beschreibung unter:
+<A HREF="http://www.velocityreviews.com/forums/t131134-specifying-path-for-file-to-be-read-by-servlet-with-tomcat.html">http://www.velocityreviews.com/forums/t131134-specifying-path-for-file-to-be-read-by-servlet-with-tomcat.html</A>
+Wie gesagt habe ich nicht wirklich Ahnung, und hoffe Euch durch meine
+Gedanken etwas zu helfen.
+
+
+Test der Webapplikationen (bezieht sich alles auf eine neue Installation
+ohne &#196;nderung, tomcat gestartet von install/client aus)
+
+1. dm-web
+scheint zu funktionieren, nur die
+url der icons sind local (<A HREF="file://..">file://..</A>)und nicht <A HREF="http://...">http://...</A> und k&#246;nnen
+deshalb nicht angezeigt werden
+
+2. dm-browser
+funktioniert teilweise,
+a) wenn ich etwas editiere (Stift icon) und auf OK klicke kommt:
+
+de.deepamehta.DeepaMehtaException: no PARAM_SEPARATOR &quot;_&quot; found in &quot;typeID&quot;
+	de.deepamehta.service.web.DeepaMehtaServlet.getWeakRelationParameters(DeepaMehtaServlet.java:857)
+
+aber die &#196;nderung wird gespeichert.
+b) ebenso beim l&#246;schen (Papierkorb Icon) kommt die Fehlermeldung
+
+de.deepamehta.DeepaMehtaException: topic &quot;t-1001&quot; is missing in corporate memory
+	de.deepamehta.service.ApplicationService.checkLiveTopic(ApplicationService.java:350)
+
+aber es wurde erfolgreich gel&#246;scht
+c) alle topicmap icons sind wieder local (<A HREF="file://....">file://....</A>) und k&#246;nnen
+deshalb nicht angezeigt werden
+
+3. dm-topicmapviewer
+funktioniert teilweise, fast alle topicmaps sind aufrufbar,
+a) die topicmaps werden korrekt gerendert, aber sind wieder local
+(<A HREF="file://....">file://....</A>) und k&#246;nnen deshalb nicht angezeigt werden,
+darum kann ich nicht sagen, ob die picture map funktioniert
+b) als einizge gibt es bei der Users and Groups (t-workgroupmap) eine
+Exception
+
+org.apache.jasper.JasperException
+	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:512)
+
+java.lang.NullPointerException
+	de.deepamehta.service.RelationalCorporateMemory.createPreparedStatement(RelationalCorporateMemory.java:1935)
+
+4. dm-search
+funktioniert teilweise,
+a) wieder locale Icons
+b) wenn ich auf einen user Zugreife kommt die Exception
+
+org.apache.jasper.JasperException
+	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:512)
+
+java.lang.NullPointerException
+	de.deepamehta.service.RelationalCorporateMemory.createPreparedStatement(RelationalCorporateMemory.java:1935)
+	de.deepamehta.service.RelationalCorporateMemory.queryBaseTopics(RelationalCorporateMemory.java:1522)
+
+
+5. messageboard
+funktioniert vollst&#228;ndig
+
+6. kompetenzstern
+funktioniert gar nicht, beim Aufruf kommt die Exception
+
+javax.servlet.ServletException: Servlet.init() for servlet Kompetenzstern Servlet threw exception
+	org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:105)
+
+java.lang.NullPointerException
+	de.deepamehta.service.ApplicationServiceInstance.&lt;init&gt;(ApplicationServiceInstance.java:66)
+	de.deepamehta.service.ApplicationServiceInstance.lookup(ApplicationServiceInstance.java:117)
+	de.deepamehta.service.web.DeepaMehtaServlet.init(DeepaMehtaServlet.java:108)
+	javax.servlet.GenericServlet.init(GenericServlet.java:211)
+
+
+
+Danke f&#252;r Eure Arbeit und
+Liebe Gr&#252;&#223;e,
+Torsten
+
+
+&gt;<i> Lieber Torsten,
+</I>&gt;<i> 
+</I>&gt;<i> ich fasse mich kurz, da ich nicht so viel tippen kann.
+</I>&gt;<i> 
+</I>&gt;<i> J&#246;rgs meinte das es vielleicht schon ausreicht wenn du,
+</I>&gt;<i> 
+</I>&gt;&gt;<i> &gt; ... install/client aus
+</I>&gt;&gt;<i> &gt; /etc/init.d/tomcat restart
+</I>&gt;<i> 
+</I>&gt;<i> ausf&#252;hrst.
+</I>&gt;<i> 
+</I>&gt;<i> ich hatte anf&#228;nglich immer ein ln -s auf die datei
+</I>&gt;<i> tomcat/bin/catalina.sh in meinem install/client rumliegen und habe
+</I>&gt;<i> dann aus diesem verzeichnis heraus den tomcat in einer extra konsole
+</I>&gt;<i> gestartet mit
+</I>&gt;<i> 
+</I>&gt;<i> ./catalina run
+</I>&gt;<i> 
+</I>&gt;<i> neuerdings ist dies ja in unsere start-routinen integriert wenn du
+</I>&gt;<i> deinen tomcat anmeldest (mittels ./run.sh config) kannst du diesen
+</I>&gt;<i> aus dem deepamehta home verzeichnis steuern mit
+</I>&gt;<i> 
+</I>&gt;<i> ./run.sh tomcat-start
+</I>&gt;<i> ./run.sh tomcat-log
+</I>&gt;<i> ./run.sh tomcat-stop
+</I>&gt;<i> 
+</I>&gt;<i> viel erfolg. hoffentlich hilft dir das beim starten der web interfaces.
+</I>&gt;<i> 
+</I>&gt;<i> sch&#246;ne gr&#252;sse,
+</I>&gt;<i> 
+</I>&gt;<i> malte
+</I>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: torsten.vcf
+Type: text/x-vcard
+Size: 148 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080726/a89c5f6a/attachment.vcf">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080726/a89c5f6a/attachment.vcf</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3311 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080726/a89c5f6a/attachment.bin">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080726/a89c5f6a/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000170.html">[deepamehta-users] deepamehta.de is down
+</A></li>
+	<LI>Next message: <A HREF="000172.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#171">[ date ]</a>
+              <a href="thread.html#171">[ thread ]</a>
+              <a href="subject.html#171">[ subject ]</a>
+              <a href="author.html#171">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Ein Topic auf einer Map unsichtbar machen	aber seine Position erhalten ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Ein%20Topic%20auf%20einer%20Map%20unsichtbar%20machen%0A%09aber%20seine%20Position%20erhalten%20%3F&In-Reply-To=%3Cdc4e46947b394778e6b003d6b0abb5dd%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000287.html">
+   <LINK REL="Next"  HREF="000289.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Ein Topic auf einer Map unsichtbar machen	aber seine Position erhalten ?</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Ein%20Topic%20auf%20einer%20Map%20unsichtbar%20machen%0A%09aber%20seine%20Position%20erhalten%20%3F&In-Reply-To=%3Cdc4e46947b394778e6b003d6b0abb5dd%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Ein Topic auf einer Map unsichtbar machen	aber seine Position erhalten ?">jri at deepamehta.de
+       </A><BR>
+    <I>Thu Aug 13 18:00:51 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000287.html">[deepamehta-users] Fwd: DenkWerkzeug 2009 in Berlin
+</A></li>
+        <LI>Next message: <A HREF="000289.html">[deepamehta-users] Mittwoch: Musik im Eschschloraque
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#288">[ date ]</a>
+              <a href="thread.html#288">[ thread ]</a>
+              <a href="subject.html#288">[ subject ]</a>
+              <a href="author.html#288">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Lieber Torsten,
+
+zu Deiner Idee, einen Topic nach Aus- und wieder Einblenden an der 
+urspr&#252;nglichen Position erscheinen zu lassen: sehr gut!
+Auch ich hatte vorher schon dar&#252;ber nachgedacht, und w&#252;rde es wie Du 
+angehen: die ViewTopic Tabelle um ein Attribut erweitern. 
+Wahrscheinlich w&#228;ren die Anpassungen nicht sehr aufwendig.
+
+Starten w&#252;rde ich so ein Vorhaben am liebsten beim pers&#246;nlichen 
+Treffen. Wenn Du Lust hast, w&#252;rde ich ein Developer-Treffen ansetzen. 
+Wir k&#246;nnten dann gemeinsam die L&#246;sung konzipieren und auch &#252;ber Deine 
+anderen Punkte sprechen. Wahrscheinlich w&#252;rden auch andere Entwickler 
+gerne dabei sein. Hast Du darauf Lust?
+
+Bitte entschuldige meine sehr sp&#228;te Antwort.
+
+Gr&#252;&#223;e
+J&#246;rg
+
+
+
+On 03.07.2009, at 10:46, Torsten Ziegler wrote:
+
+&gt;<i> Hallo J&#246;rg und liebes DeepaMehta Team,
+</I>&gt;<i>
+</I>&gt;<i> ich habe mir gerade mal wieder etwas Luft zum
+</I>&gt;<i> Experimentieren geschafft und habe gleich zwei Fragen:
+</I>&gt;<i>
+</I>&gt;<i> erst mal die zur Benutzung:
+</I>&gt;<i>
+</I>&gt;<i> Ausgangssituation: Ein Topic ist in zwei Topic Maps aufgedeckt.
+</I>&gt;<i>
+</I>&gt;<i> L&#246;sche ich es nun von der einen Topic Map, so ist es noch auf der
+</I>&gt;<i> zweiten vorhanden, aber nat&#252;rlich nicht mehr ansprechbar. Ich mu&#223;
+</I>&gt;<i> erst die zweite Topic Map schlie&#223;en und wieder auf machen damit es
+</I>&gt;<i> verschwindet.
+</I>&gt;<i>
+</I>&gt;<i> Soll das so sein ?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> und dann mehr zum Prinzip (das ich gerne ver&#228;ndern w&#252;rde):
+</I>&gt;<i>
+</I>&gt;<i> Ein Topic kann versteckt (hide) oder gel&#246;scht (delete) werden.
+</I>&gt;<i>
+</I>&gt;<i> Bisher ist es so:
+</I>&gt;<i>
+</I>&gt;<i> Beim verstecken wird das ViewTopic gel&#246;scht und somit geht
+</I>&gt;<i> die Position auf der Topic Map verloren.
+</I>&gt;<i> Beim l&#246;schen wird das Topic von allen Topic Maps gel&#246;scht, ohne
+</I>&gt;<i> dass ich gewarnt werde, da&#223; es in anderem Zusammenhang vielleicht
+</I>&gt;<i> noch (sinnvoll) in Verwendung ist.
+</I>&gt;<i>
+</I>&gt;<i> Was ich sch&#246;ner f&#228;nde (und implementieren m&#246;chte):
+</I>&gt;<i>
+</I>&gt;<i> Beim verstecken (hide) wird das Topic wirklich nur unsichtbar gemacht
+</I>&gt;<i> (z.B. ein anderer View Mode im Presentable Topic) aber das View Topic
+</I>&gt;<i> bleibt erhalten und somit kann auch das Topic an seiner alten Position
+</I>&gt;<i> (nat&#252;rlich in Abh&#228;ngigkeit der Topic Map) wieder hergestellt werden
+</I>&gt;<i>
+</I>&gt;<i> Das l&#246;schen w&#252;rde ich gerne zweiteilen:
+</I>&gt;<i> L&#246;schen von der Topic Map = l&#246;schen des View Topic = bisher: hide
+</I>&gt;<i> L&#246;schen aus dem Corporate Memory = l&#246;schen des Topics und aller 
+</I>&gt;<i> ViewTopics = bisher: delete
+</I>&gt;<i>
+</I>&gt;<i> Meine Frage dazu ist:
+</I>&gt;<i> Wie verh&#228;lt sich diese Idee zum Konzept von Deepamehta ?
+</I>&gt;<i> Passt das zur Philosophie oder widerspricht es ?
+</I>&gt;<i> Und zur Implementierung: wo ist es sinnvoll anzufassen ?
+</I>&gt;<i> Kann ich das  auf der Application Ebene  erledigen  (ich glaube eher 
+</I>&gt;<i> nicht)
+</I>&gt;<i> oder mu&#223; ich in die Presentable Topic / Corporate Directives Ebene 
+</I>&gt;<i> eingreifen ?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Danke und Gru&#223;
+</I>&gt;<i> Torsten
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &lt;torsten.vcf&gt;_______________________________________________
+</I>&gt;<i> deepamehta-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">https://lists.berlios.de/mailman/listinfo/deepamehta-users</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000287.html">[deepamehta-users] Fwd: DenkWerkzeug 2009 in Berlin
+</A></li>
+	<LI>Next message: <A HREF="000289.html">[deepamehta-users] Mittwoch: Musik im Eschschloraque
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#288">[ date ]</a>
+              <a href="thread.html#288">[ thread ]</a>
+              <a href="subject.html#288">[ subject ]</a>
+              <a href="author.html#288">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] utf-8 Probleme
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-August/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20utf-8%20Probleme&In-Reply-To=%3C8a3da6d3f6e66888e3509a63ab11435e%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000184.html">
+   <LINK REL="Next"  HREF="000190.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] utf-8 Probleme</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20utf-8%20Probleme&In-Reply-To=%3C8a3da6d3f6e66888e3509a63ab11435e%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] utf-8 Probleme">jri at deepamehta.de
+       </A><BR>
+    <I>Fri Aug  8 03:13:05 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000184.html">[deepamehta-users] utf-8 Probleme
+</A></li>
+        <LI>Next message: <A HREF="000190.html">[deepamehta-users] utf-8 Probleme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#189">[ date ]</a>
+              <a href="thread.html#189">[ thread ]</a>
+              <a href="subject.html#189">[ subject ]</a>
+              <a href="author.html#189">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Lieber Torsten,
+
+Ja, ich kann Dein Problem nachvollziehen. Inzwischen habe ich den  
+Fehler gefunden. In einer Konfigurationsdatei fehlt ein Parameter.
+
+Um den Fehler zu beheben, editiere die Datei  
+&quot;install/config/dm-mysql5.properties&quot;: f&#252;ge an die Property &quot;db.url&quot;  
+hinten den Parameter &quot;characterEncoding=utf8&quot; an. Die komplette Zeile  
+lautet also:
+
+db.url =  
+jdbc:<A HREF="mysql://${db.host">mysql://${db.host</A>}/${db.name}? 
+useUnicode=true&amp;characterEncoding=utf8
+
+Beim Neustart von DeepaMehta solltest Du im Log jetzt die komplettierte  
+URL sehen;
+
+&gt;<i>  [java] Using Database
+</I>&gt;<i>  [java]   Type : mysql5
+</I>&gt;<i>  [java]   URL :  
+</I>&gt;<i> jdbc:<A HREF="mysql://127.0.0.1/DeepaMehta?">mysql://127.0.0.1/DeepaMehta?</A> 
+</I>&gt;<i> useUnicode=true&amp;characterEncoding=utf8
+</I>&gt;<i>  [java]   Driver : org.gjt.mm.mysql.Driver
+</I>
+Jetzt korrigiere in DeepaMehta die korrupten Topic-Namen von Hand. Von  
+nun an sollte alles korrekt funktionieren.
+
+Zu den SCIM-Eingabemethoden: davon hatte ich bisher noch nicht geh&#246;rt.  
+Ich nehme an, da&#223; diese von Sun in das JDK/Linux integriert werden  
+m&#252;ssten, die DeepaMehta-Entwickler da m&#246;glicherweise wenig ausrichten  
+k&#246;nnen. Eine Google-Suche nach &quot;SCIM Java&quot; zeigt, da&#223; das ein &quot;Thema&quot;  
+ist.
+
+Hintergrund zum UTF-Problem: dank Deines Hinweises, und durch  
+detaillierte Tests habe ich herausgefunden, da&#223; f&#252;r MySQL 4 und MySQL 5  
+die UTF-Datenablage garnicht funktioniert, sondern Latin1 benutzt wird.  
+Da&#223; wir das jetzt erst bemerken, liegt auch daran, da&#223; wir uns bisher  
+nicht mit chinesischer Umschrift befasst haben :-)
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pastedGraphic2.tiff
+Type: image/tiff
+Size: 16562 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080808/cff5699b/attachment.tiff">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080808/cff5699b/attachment.tiff</A>&gt;
+-------------- next part --------------
+
+
+Auf dem Screenshot kann man sehen, da&#223; Latin1-Zeichen, z.B. &#220;&#228;&#252;&#233;&#232;, 
+korrekt abgelegt werden, UTF-Zeichen, z.B. ??, hingegen nicht. Da&#223; die 
+UTF-Zeichen im Feld &quot;Description&quot; allerdings richtig erscheinen, liegt 
+daran, da&#223; dies ein &quot;Text Editor&quot;-Feld ist, wo HTML hinterliegt, und 
+die UTF-Zeichen dort als Entities kodiert werden (z.B. &#466;). Das 
+Feld &quot;Name&quot; hingegen ist ein reines (vormals Latin1-kodiertes) 
+Text-Feld.
+
+In HSQL tritt der Fehler nicht auf. Dort funktioniert die UTF-Kodierung.
+
+Vielen Dank f&#252;r das Feedback!
+
+Gr&#252;&#223;e
+J&#246;rg
+
+
+On 01.08.2008, at 23:12, Torsten Ziegler wrote:
+
+&gt;<i> Hallo J&#246;rg und Co.,
+</I>&gt;<i>
+</I>&gt;<i> mir sind gerade Zeichensatz Probleme aufgefallen.
+</I>&gt;<i> Und zwar arbeite ich mit pinyin zum schreiben von
+</I>&gt;<i> chinesischen Zeichen und wenn ich ein Topic zum
+</I>&gt;<i> Beispiel:
+</I>&gt;<i> Sh?u Y?n F&#232;i J?ng
+</I>&gt;<i> nenne wird es nach der Eingabe noch richtig in
+</I>&gt;<i> der Map angezeigt, sobald es aber aus der Datenbank
+</I>&gt;<i> (derzeit mysql5) gelesen wird kommt:
+</I>&gt;<i> Sh?u Y?n F&#232;i J?ng
+</I>&gt;<i> dabei raus (ich hoffe das erscheint hier in der email richtig)
+</I>&gt;<i> Ich habe mir den entsprechenden Eintrag in mysql angesehen
+</I>&gt;<i> und es wird schon so falsch abgespeichert.
+</I>&gt;<i> Wenn ich den Eintrag von Hand in der Tabelle &#228;ndere
+</I>&gt;<i> wird er richtig aus der Datenbank gelesen und angezeigt,
+</I>&gt;<i> er geht erst bei der n&#228;chsten &#196;nderung wieder kaputt.
+</I>&gt;<i> Das ist unter Windows und Linux der Fall.
+</I>&gt;<i>
+</I>&gt;<i> Und dann habe ich noch das Problem, da&#223; ich Java unter
+</I>&gt;<i> Linux noch nicht dazu &#252;berreden kann die SCIM Eingabemethoden
+</I>&gt;<i> zu benutzen. Ich muss also erst in einen Texteditor schreiben und
+</I>&gt;<i> dann in Deepamehta r&#252;berkopieren. Wenn da jemand
+</I>&gt;<i> Abhilfe weiss w&#228;re ich auch ganz froh.
+</I>&gt;<i>
+</I>&gt;<i> Liebe Gr&#252;&#223;e
+</I>&gt;<i> Torsten
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &lt;torsten.vcf&gt;_______________________________________________
+</I>&gt;<i> deepamehta-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">https://lists.berlios.de/mailman/listinfo/deepamehta-users</A>
+</I></PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000184.html">[deepamehta-users] utf-8 Probleme
+</A></li>
+	<LI>Next message: <A HREF="000190.html">[deepamehta-users] utf-8 Probleme
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#189">[ date ]</a>
+              <a href="thread.html#189">[ thread ]</a>
+              <a href="subject.html#189">[ subject ]</a>
+              <a href="author.html#189">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

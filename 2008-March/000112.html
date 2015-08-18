@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] DeepaMehta beim Google Summer of Code 2008?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-March/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%20beim%20Google%20Summer%20of%20Code%202008%3F&In-Reply-To=%3C47D01E8D.4050002%40dagnu.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000111.html">
+   <LINK REL="Next"  HREF="000113.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?</H1>
+    <B>Danny Gr&#228;f</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%20beim%20Google%20Summer%20of%20Code%202008%3F&In-Reply-To=%3C47D01E8D.4050002%40dagnu.de%3E"
+       TITLE="[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?">mail at dagnu.de
+       </A><BR>
+    <I>Thu Mar  6 17:40:45 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000111.html">[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?
+</A></li>
+        <LI>Next message: <A HREF="000113.html">[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hallo,
+
+ich finde das eine sehr gute Idee. Zu den genannten Themen habe ich noch 
+ein paar Vorschl&#228;ge und Anmerkungen.
+
+Bei der Arbeit an LDAP und den Mailarchiven habe ich mir relativ zeitig 
+eine bessere Unterst&#252;tzung bei der Entwicklung von neuen DeepaMehta 
+Funktionalit&#228;ten gew&#252;nscht. Gut w&#228;re hier die Bereitstellung einer gut 
+dokumentierten Schnittstelle (Core, Hooks, Container, Topics) und die 
+Integration einer Architektur f&#252;r die Entwicklung, Installation und 
+Aktualisierung von Deepamehta-Anwendungen (OSGi, SCA, ICO).
+
+Die Umsetzung der Webservice Schnittstelle betreffend, w&#228;re ich &#252;ber 
+einen generelleren Ansatz erfreuter, der neben REST auch XML-RPC, 
+Document Literal, JMS, JSON, ... anbietet (ServiceMix BCs, SCA).
+Ein weiteres Projekt in diesem Bereich ist auch die generalisierte 
+Nutzung von Webservices, z.B. in Form einer Webservice DataSource, die 
+f&#252;r die Webservice-Typen entsprechende Topics anbietet und es erm&#246;glicht 
+die Webservice Methoden auf Containern aufzurufen. Beide Projekte 
+zusammen k&#246;nnten DeepaMehta als Integrationsplattform in einer SOA 
+nutzbar machen, die Webservices konsumiert und zur Verf&#252;gung stellt 
+(Cache, Index, Proxy, Search).
+
+Ein weiteres Projekt w&#228;re die Umsetzung einer anderen GUI 
+Implementierung die besser in einen WebBrowser integriert ist und 
+DeepaMehta somit leichter zug&#228;nglich macht (Flash, JavaScript, SVG, XUL).
+
+Etwas kritisch stehe ich Projekten wie der Blog-Anbindung und der 
+Nutzung der Amazon und Google APIs gegen&#252;ber, da sie mir zu kleinteilig 
+erscheinen. Einen Blog kann ich heute schon in DeepaMehta erstellen und 
+unter der Anbindung von Blogsystemen kann ich mir nur Dinge wie eine 
+WordPress DataSource oder &#228;hnliches vorstellen. Und die Nutzung externer 
+Webserices sehe ich eher als Beispiele f&#252;r die Umsetzung einer 
+Webservice DataSource.
+
+Gru&#223; Danny
+
+
+J&#246;rg Richter schrieb:
+&gt;<i> Liebe DeepaMehta-Freunde,
+</I>&gt;<i> 
+</I>&gt;<i> aus der Community kam der Impuls mit DeepaMehta beim Google Summer of  
+</I>&gt;<i> Code 2008 mitzumachen. Diese Idee finde ich gut, und ich m&#246;chte diesen  
+</I>&gt;<i> Weg gerne gehen. Der Summer of Code ist eine gute Gelegenheit, neue  
+</I>&gt;<i> DeepaMehta Features zu realisieren und sich mit anderen  
+</I>&gt;<i> Projekten/Plattformen zu vernetzen.
+</I>&gt;<i> 
+</I>&gt;<i> Ganz unter der Vernetzungsthematik hab' ich f&#252;r den Summer of Code im  
+</I>&gt;<i> Moment folgende Entwicklungsideen:
+</I>&gt;<i> 
+</I>&gt;<i> =&gt; Einbindung einer Browser-Engine (z.B. Mozilla Gecko).  
+</I>&gt;<i> Feature-Beschreibung:
+</I>&gt;<i> 	<A HREF="http://developer.berlios.de/feature/?">http://developer.berlios.de/feature/?</A> 
+</I>&gt;<i> func=detailfeature&amp;feature_id=1764&amp;group_id=5174
+</I>&gt;<i> =&gt; Anbindung von Blogs, in beide Richtungen:
+</I>&gt;<i> 	- in DeepaMehta: &quot;Blog this Topicmap at Blog XY&quot;
+</I>&gt;<i> 	- im Blog: &quot;Open this Topicmap in DeepaMehta&quot;
+</I>&gt;<i> =&gt; DeepaMehta als (RESTful) Webservice: DeepaMehta Corporate Memory  
+</I>&gt;<i> Inhalte f&#252;r die Entwicklung von Mashups verf&#252;gbar machen
+</I>&gt;<i> =&gt; Einbindung von Google-Search &#252;ber API (die derzeitige Einbindung per  
+</I>&gt;<i> SOAP wird von Google nicht mehr unterst&#252;tzt)
+</I>&gt;<i> =&gt; Einbindung weiterer Google APIs, z.B. Google Maps (Ankopplung an ein  
+</I>&gt;<i> &quot;Address&quot;-Topic)
+</I>&gt;<i> =&gt; Einbindung der Amazon API: Browsen von Produkt-Empfehlungen in Form  
+</I>&gt;<i> von Topicmaps. Kauffunktion.
+</I>&gt;<i> 
+</I>&gt;<i> Die Idee am Summer of Code teilzunehmen kommt von Urs Lerch.
+</I>&gt;<i> Malte Rei&#223;ig hat sich bereits als Mentor zur Verf&#252;gung gestellt.
+</I>&gt;<i> Die Idee mit der Blog-Anbindung und der Amazon API kommt von Vincent  
+</I>&gt;<i> Scheffler.
+</I>&gt;<i> 
+</I>&gt;<i> Eventuell hat jemand von euch weitere Entwicklungsideen, oder m&#246;chte  
+</I>&gt;<i> sonstwie Unterst&#252;tzung anbieten. Googles Bewerbungsfrist endet am  
+</I>&gt;<i> Mittwoch, 12. M&#228;rz.
+</I>&gt;<i> 
+</I>&gt;<i> Heise-Nachricht &quot;Google Summer of Code 2008 nimmt Anmeldungen entgegen&quot;:
+</I>&gt;<i> www.heise.de/newsticker/meldung/104444/from/rss09
+</I>&gt;<i> 
+</I>&gt;<i> Googles &quot;Summer of Code&quot; Homepage:
+</I>&gt;<i> <A HREF="http://code.google.com/soc/">http://code.google.com/soc/</A>
+</I>&gt;<i> 
+</I>&gt;<i> Gr&#252;&#223;e
+</I>&gt;<i> J&#246;rg
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> deepamehta-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">https://lists.berlios.de/mailman/listinfo/deepamehta-users</A>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000111.html">[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?
+</A></li>
+	<LI>Next message: <A HREF="000113.html">[deepamehta-users] DeepaMehta beim Google Summer of Code 2008?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

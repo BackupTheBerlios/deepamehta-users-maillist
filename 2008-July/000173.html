@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-15%3Fq%3FFrage_und_Problem_bez%3DFCglich_%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3FSubtype_und_Derivation%3F%3D&In-Reply-To=%3C48903FAE.7020408%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000172.html">
+   <LINK REL="Next"  HREF="000174.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation</H1>
+    <B>Malte Rei&#223;ig</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-15%3Fq%3FFrage_und_Problem_bez%3DFCglich_%3F%3D%0A%20%3D%3Fiso-8859-15%3Fq%3FSubtype_und_Derivation%3F%3D&In-Reply-To=%3C48903FAE.7020408%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation">mre at deepamehta.de
+       </A><BR>
+    <I>Wed Jul 30 12:17:18 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000172.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+        <LI>Next message: <A HREF="000174.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jetzt nochmal f&#252;r alle, mein thunderbird war nicht richtig justiert.
+
+....
+
+Hallo Torsten,
+
+erst einmal vielen herzlichen Dank f&#252;r deinen genauen Fehler und
+Erfolgs-Report zum aktuellen Status einiger Web Interfaces und der
+Installationsroutine. Wir werden diese Fehler zum b8 Release nochmal
+in der developer runde auf den Tisch bringen und diskutieren, danke!
+
+Torsten Ziegler wrote:
+&gt;<i> &gt; Liebes deepamehta Team,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ich habe heute den ganzen Tag damit zugebracht mich weiter
+</I>&gt;<i> &gt; einzuarbeiten und meine eigenen Typen aufzubauen, das Wiki
+</I>&gt;<i> &gt; ist echt sehr hilfreich dazu.
+</I>
+sch&#246;n, das freut uns  :)  das wiki is ja noch ziemlich frisch und
+erst durch das engagement der power-user   konnte es soweit reifen.
+wenn du dich schon zu diesen zugeh&#246;rig f&#252;hlst, f&#228;nde ich es sch&#246;n
+wenn du meine kurze &quot;kopfschmerztablette&quot; (pardon, viell. ist sie ja
+auch gar keene) auf die diskussionspage zum user guide &#252;bertragen
+k&#246;nntest.
+
+&gt;<i> &gt; Aber die Sache mit den Subtypen bereitet mir jetzt gro&#223;e
+</I>Kopfschmerzen
+&gt;<i> &gt; und um etwas Hilfe w&#228;re ich dankbar.
+</I>&gt;<i> &gt; Das Problem ist, dass die besonderen Originalfunktionen verloren
+</I>gehen,
+&gt;<i> &gt; sobald ich ein Derrivat erzeuge. (updaten der Toipcs mache ich,
+</I>also daran
+&gt;<i> &gt; kann es nicht liegen)
+</I>&gt;<i> &gt; Die sollten doch erhalten bleiben, oder habe ich da etwas falsch
+</I>&gt;<i> &gt; verstanden ??
+</I>
+Die &quot;Originalfunktion&quot; bleibt erhalten wenn du z.B. von einem Typ
+&quot;Person&quot; eine Ableitung erzeugst, jedoch macht dies noch keinen Sinn
+wenn du einen Typ aus dem DeepaMehta &quot;Modellbaukasten&quot; /
+&quot;TypeBuilder&quot; Workspace erweitern willst. Dieser Workspace und die
+dazugeh&#246;rigen Typen sind etwas besonderes in DeepaMehta und
+erm&#246;glichen das modellieren von Strukturen soweit wie es momentan
+vom Framework unterst&#252;tzt wird. Das konntest du gar nicht wissen und
+hoffentlich sind die Kopfschmerzen jetzt schnell verflogen. Ein
+kleines Beispiel dazu folgt zwischen den n&#228;chsten Zeilen...
+
+&gt;<i> &gt; Beispiel 1:
+</I>&gt;<i> &gt; Ich nehme den Typ &quot;property value&quot; und erzeuge mittels &quot;create
+</I>subtype&quot; ein
+&gt;<i> &gt; neues Derrivat namens &quot;my property value&quot;. Wenn ich nun solche &quot;my
+</I>&gt;<i> &gt; property values&quot;
+</I>&gt;<i> &gt; anlege erscheinen sie nie in den zugeh&#246;rigen Drop Down Boxen der
+</I>&gt;<i> &gt; entsprechenden
+</I>&gt;<i> &gt; Porperty. Nur wenn ich den Typ wieder auf &quot;property value&quot; retype
+</I>&gt;<i> &gt; funktioniert es wie erwartet,
+</I>&gt;<i> &gt; wenn ich es wieder auf mein Derivat umstelle verschinden sie
+</I>wieder aus
+&gt;<i> &gt; der Liste.
+</I>
+Property Values sind gedacht um z.B. zu einem Typ Person die
+Eigenschaft &quot;Geschlecht&quot; zuzuweisen und die Werte im Vorfeld f&#252;r den
+User zu definieren. Dem Property Geschlecht kannst du dann zwei
+Property Values geben &quot;M&#228;nnlich&quot; und &quot;Weiblich&quot;. Eine Ableitung vom
+Typen Property Value zu erzeugen macht aus Anwendersicht keinen Sinn.
+
+&gt;<i> &gt;
+</I>&gt;<i> &gt; Beispiel 2:
+</I>&gt;<i> &gt; Ich nehme den Typ &quot;Relation&quot; und erzeuge mittels &quot;create
+</I>subtype&quot; ein
+&gt;<i> &gt; neues Derrivat namens &quot;my relation&quot;. Wenn ich nun zwei Topic Typen
+</I>&gt;<i> &gt; &#252;ber diese &quot;my relation&quot; verbinde taucht im (rchts klick)
+</I>Kontext Menu
+&gt;<i> &gt; kein entsprechender Eintrag. Retype ich die Assoziation wieder auf
+</I>&gt;<i> &gt; &quot;relation&quot;
+</I>&gt;<i> &gt; taucht das erwartete &quot;Assign ...&quot; im Kontext Menu auf.
+</I>
+Der Typ Relation geh&#246;rt ebenfalls zum &quot;Modellbaukasten&quot; von
+DeepaMehta. Er ist gedacht um z.B. zu einem Typ &quot;Person&quot; und einem
+Typ &quot;City&quot; die Relation mit dem Namen &quot;Geburtsort&quot; zu ziehen.
+
+&gt;<i> &gt; Danke und Liebe Gr&#252;&#223;e
+</I>&gt;<i> &gt; Torsten
+</I>&gt;<i> &gt;
+</I>
+Es freut mich das du schon so weit vordringen konntest! Diese
+kleinen Haken und &#214;sen die du da erf&#228;hrst sind einfach noch nicht
+ausreichend oder erst rudiment&#228;r dokumentiert.
+
+Danke f&#252;r die Post!
+
+Gru&#223; Malte
+
+____________________________
+__________________
+&gt;<i> &gt; deepamehta-users mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">https://lists.berlios.de/mailman/listinfo/deepamehta-users</A>
+</I>
+-- ______________________ www.deepamehta.de/~mre <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">mre at deepamehta.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">mre at jabber.ccc.de</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000172.html">[deepamehta-users] Frage und Problem bez&#252;glich Subtype und Derivation
+</A></li>
+	<LI>Next message: <A HREF="000174.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

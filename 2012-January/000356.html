@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Questions regarding usage.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Questions%20regarding%20usage.&In-Reply-To=%3CF5A43C0A-6B2C-4085-9B59-D19A9E3EFDCE%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000354.html">
+   <LINK REL="Next"  HREF="000357.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Questions regarding usage.</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Questions%20regarding%20usage.&In-Reply-To=%3CF5A43C0A-6B2C-4085-9B59-D19A9E3EFDCE%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Questions regarding usage.">jri at deepamehta.de
+       </A><BR>
+    <I>Tue Jan 17 01:07:02 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000354.html">[deepamehta-users] Questions regarding usage.
+</A></li>
+        <LI>Next message: <A HREF="000357.html">[deepamehta-users] Questions regarding usage.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#356">[ date ]</a>
+              <a href="thread.html#356">[ thread ]</a>
+              <a href="subject.html#356">[ subject ]</a>
+              <a href="author.html#356">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Asif,
+
+thanks for the questions and illustrative screenshots! I think I understand what you're missing. Let me bring some light in here ...
+
+About your setup: everything seems to be fine with your DM installation. One critical point might be ports. DM starts an embeddd webserver and thus must open a TCP port for incomming connections (8080 by default, apparently customized to 10111 by you). As soon as you see the DM GUI in your browser (like in your screenshots), everything is OK.
+
+About navigation: the page panel (right side) shows details about the selected topic. Additionally in the &quot;Associations&quot; section the topic's associations to other topics are listed (as links). If you click such a link that association is revealed -- not created! -- on the canvas (left side).
+So, the Associations sections shows *what's there* (in the DB) and it's up to you what to bring to the canvas. This is a central concept of DM: all content exist independantly from the view. The user is free to arrange his view according to the current task at hand. So, a topicmap (as visualized on the canvas) is not a *container* for contents but a *view* of contents (as stored in the DB). A topicmap reflects the user's work situation. Every topic (and association) might appear in every topicmap (possibly belonging to another other user).
+
+About types: topics as well as associations are typed. Out-of-the-box (topic) types are e.g. &quot;Person&quot;, &quot;Note&quot;, and &quot;Web Resource&quot;. You can create *instances* (= topics) of these types by the means of the Create menu. Types itself are topics and each instance is associated with its type (so you can easily reveal a topic's type). You can create your own types (see below).
+
+About Search: out-of-the-box there are 2 search modes, &quot;By Text&quot; and &quot;By Type&quot;. By Text is a fulltext search. So, if you have e.g. a Person topic with Name &quot;Asif Mohammed&quot; and Notes &quot;DeepaMehta user&quot; that topic would be found by the search terms &quot;Asif&quot; or &quot;Deepa&quot;.
+The By Type search founds all topics based on its type.
+A search result is visualized as a bucket. Click the bucket to see the list of search result items in the page panel (ready for being revealed). To remove the bucket from the canvas right-click it and choose &quot;Delete&quot; from the context menu (the result items itself will no be deleted.)
+(Note: I'm not happy with that bucket icon as it resembles a trash can, just like you said. I'm looking for a better &quot;result set&quot; icon.)
+
+About type building: this is a complex topic I like to talk about in a separate posting. Just 3 things here:
+1) DM is special in the sense that there are *no properties*, just types, and types are composed of child types by the means of compositions and aggregations.
+2) The Type URI is user editable but you can go with the provided default value. (The URI might be of interest when you develop a DM plugin.)
+3) DM is fully explorable: you can reveal the type definitions of all the out-of-box types (as well as internal types) and learn from that how to build your own types.
+
+About your usage scenario: for the &quot;Java Build/Maven/Web Pages&quot; scenario you must not necessarily build your own types. Just use the existing ones. Create 2 Notes, &quot;Java Build&quot; and &quot;Maven&quot;, type in some text. There is a styled text editor, with headings, bullet lists and the like. Create some &quot;Web Resource&quot; topics, and finally create the appropriate associations between the topics.
+
+
+Currently we're working on a DM4 user guide. It will be provided in 2 languages but for the moment it is german only. However, the screenshots contains informative blue bubbles in english. You can see the work-in-progress here:
+<A HREF="https://deepamehta.vzsze.de/de/content/so-gehts-grundbegriffe">https://deepamehta.vzsze.de/de/content/so-gehts-grundbegriffe</A>
+Below each screenshot there is a link &quot;weiter zu ...&quot; which means &quot;next page&quot;.
+
+Have fun,
+and don't be hesitant with more questions.
+You're welcome.
+
+Cheers
+J&#246;rg
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000354.html">[deepamehta-users] Questions regarding usage.
+</A></li>
+	<LI>Next message: <A HREF="000357.html">[deepamehta-users] Questions regarding usage.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#356">[ date ]</a>
+              <a href="thread.html#356">[ thread ]</a>
+              <a href="subject.html#356">[ subject ]</a>
+              <a href="author.html#356">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

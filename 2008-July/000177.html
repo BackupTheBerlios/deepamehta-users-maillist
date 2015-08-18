@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Frage bez&#252;glich Import Export
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-1%3Fq%3FFrage_bez%3DFCglich_Import_Export%3F%3D&In-Reply-To=%3C48907A27.5070709%40ziegi.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000175.html">
+   <LINK REL="Next"  HREF="000176.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Frage bez&#252;glich Import Export</H1>
+    <B>Torsten Ziegler</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-1%3Fq%3FFrage_bez%3DFCglich_Import_Export%3F%3D&In-Reply-To=%3C48907A27.5070709%40ziegi.de%3E"
+       TITLE="[deepamehta-users] Frage bez&#252;glich Import Export">torsten at ziegi.de
+       </A><BR>
+    <I>Wed Jul 30 16:26:47 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000175.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+        <LI>Next message: <A HREF="000176.html">[deepamehta-users] 30.7. Eschschloraque: CRAZY MUSIC FOR FREAKS AND	WEIRDOS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#177">[ date ]</a>
+              <a href="thread.html#177">[ thread ]</a>
+              <a href="subject.html#177">[ subject ]</a>
+              <a href="author.html#177">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+&gt;<i> Danke an Malte, f&#252;r die Hilfestellungen!
+</I>&gt;<i>   
+</I>Ja, vielen Dank
+
+&gt;<i> Torsten schrieb:
+</I>&gt;<i>   
+</I>&gt;&gt;&gt;<i> Irgendwie bin ich davon ausgegangen, dass unterliegende 
+</I>&gt;&gt;&gt;<i> Voraussetzungen f&#252;r eine Topic Map aus dem Corporate Memory mit 
+</I>&gt;&gt;&gt;<i> exportiert w&#252;rden.
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;<i>
+</I>&gt;<i> So ist es auch!
+</I>&gt;<i> (und nach meinem Kenntinisstand funktioniert es auch so :-)
+</I>&gt;<i> Eine Export-Datei ist v&#246;llig &quot;self-contained&quot;, d.h. sie enth&#228;lt alles, 
+</I>&gt;<i> was notwendig ist, um die Topic Map in einem anderen Corporate Memory 
+</I>&gt;<i> zu rekonstruieren: insbesobdere geh&#246;ren die Typ-Defintionen dazu (und 
+</I>&gt;<i> auch Icon-Dateien und Dokumente).
+</I>&gt;<i>
+</I>&gt;<i> Beachte: beim Exportieren sollte die Typ-Definition (Type-Topics, 
+</I>&gt;<i> Derivations, Properties usw.) _nicht_ aufgedeckt sein. Die 
+</I>&gt;<i> Typ-Definitionen werden n&#228;mlich _automatisch_ exportiert. Wenn sie 
+</I>&gt;<i> zus&#228;tzlich auch in der Map aufgedeckt sind, kann es zu &quot;Verwechslungen&quot; 
+</I>&gt;<i> kommen. Ich nehme an, da&#223; Dir das passiert ist.
+</I>&gt;<i>   
+</I>Ok, das kann ich best&#228;tigen.
+Wenn ich nur meine Inhalts Topic Maps ex- und importiere
+und nicht zuvor die Typen Topic Map, dann funktioniert es
+wie erwartet.
+
+&gt;<i>   
+</I>Ich habe grade versucht mal das komplette Corporate Memory zu
+exportieren und in einer leeren Installation wieder zu importieren.
+Einmal hat es geklappt und ich war schon ganz froh das als Alternative
+zu  haben,
+die n&#228;chsten paar mal hat es dann aber leider nicht mehr funktionier,
+weil irgendwelche Toipcs beim importieren wohl falsch sortiert waren:
+  [java] Exception in thread &quot;Thread-1&quot;
+de.deepamehta.DeepaMehtaException: type &quot;t-1052&quot; is missing in corporate
+memory
+     [java]     at
+de.deepamehta.service.ApplicationService.type(ApplicationService.java:4846)
+
+Dann habe ich den HSQL DatabaseManager ausprobiert,
+der eigentlich Problemlos von HSQL nach MYSQL wandeln sollte,
+(siehe
+<A HREF="http://support.objectplanet.com/forum/thread.jspa?forumID=8&amp;threadID=1377,">http://support.objectplanet.com/forum/thread.jspa?forumID=8&amp;threadID=1377,</A>
+wobei er erst mal von <A HREF="http://hsqldb.org/">http://hsqldb.org/</A> runtergeladen und neu
+kompilierten werden muss,
+um die Transfer Tools drin zu haben)
+das ist aber so buggy - wie kann mann &#252;berhaupt eine Datenbank
+schreiben, die f&#252;r Tables und User nur Gro&#223;buchstaben kennt ??? -
+da&#223; ich wohl vorerst dem Umweg &#252;ber MYSQL nehmen muss.
+
+
+Danke nochmal an alle
+Liebe Gr&#252;&#223;e,
+Torsten
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.html">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: torsten.vcf
+Type: text/x-vcard
+Size: 148 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.vcf">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.vcf</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/x-pkcs7-signature
+Size: 3311 bytes
+Desc: S/MIME Cryptographic Signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.bin">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080730/be0f09b7/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000175.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+	<LI>Next message: <A HREF="000176.html">[deepamehta-users] 30.7. Eschschloraque: CRAZY MUSIC FOR FREAKS AND	WEIRDOS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#177">[ date ]</a>
+              <a href="thread.html#177">[ thread ]</a>
+              <a href="subject.html#177">[ subject ]</a>
+              <a href="author.html#177">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

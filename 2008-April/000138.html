@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Wiki Input: DeepaMehta Q&amp;A
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-April/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Wiki%20Input%3A%20DeepaMehta%20Q%26A&In-Reply-To=%3C02d27c31370019caf5db35ccb0cb523d%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000137.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Wiki Input: DeepaMehta Q&amp;A</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Wiki%20Input%3A%20DeepaMehta%20Q%26A&In-Reply-To=%3C02d27c31370019caf5db35ccb0cb523d%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Wiki Input: DeepaMehta Q&amp;A">jri at deepamehta.de
+       </A><BR>
+    <I>Tue Apr 29 23:24:49 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000137.html">[deepamehta-users] A new wiki, but what`s next?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#138">[ date ]</a>
+              <a href="thread.html#138">[ thread ]</a>
+              <a href="subject.html#138">[ subject ]</a>
+              <a href="author.html#138">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Liebe DeepaMehta-Freunde,
+
+ich freue mich &#252;ber unser neues Wiki! Das geht auf Maltes Initiative 
+zur&#252;ck. Um den Community-Proze&#223; anzuregen, wollte er ein Wiki haben, 
+das jedem offen steht. Besonders freue ich mich &#252;ber Maltes und 
+Matthias M. Schreibaktivit&#228;ten.
+<A HREF="http://deepamehta.newthinking.net/wiki/">http://deepamehta.newthinking.net/wiki/</A>
+
+Offenbar war es Matthias M., der jetzt im Wiki die grundlegenden 
+DeepaMehta-Fragen wieder aufgenommen hat, die beim Community-Treffen am 
+26. Juli 2006 diskutiert wurden. Im Anschlu&#223; an das Treffen hatte ich 
+damals angefangen, meine pers&#246;nlichen Anworten aufzuschreiben, hab's 
+aber nicht rumgeschickt. Das hole ich hiermit jetzt nach. Allerdings 
+bin ich damals nur bis Frage 4 gekommen, und der Text ist in deutsch. 
+M&#246;glicherweise ist es trotzdem n&#252;tzlicher Input und der ein oder andere 
+Wikianer hat Lust das ins Wiki zu stellen :-)
+<A HREF="http://deepamehta.newthinking.net/wiki/en/Q%26A">http://deepamehta.newthinking.net/wiki/en/Q%26A</A>
+
+Au&#223;erdem h&#228;nge ich weitere Texte ran, die meine Sicht davon enthalten, 
+was DeepaMehta ist, wo DeepaMehta hin will, welche Fragestellungen 
+DeepaMehta erforscht, und was die DeepaMehta-Website vermitteln k&#246;nnte. 
+Ich hoffe, da&#223; diese Infos helfen k&#246;nnen, das DeepaMehta-Bild zu 
+vervollst&#228;ndigen.
+
+Gr&#252;&#223;e
+J&#246;rg
+
+------------------
+
+Q&amp;A
+
+=&gt; Wie ist die DeepaMehta Softwarearchitektur aufgebaut?
+
+DeepaMehta ist eine Java-basierte Client Server Architektur.
+Mehrschichtenarchitektur, die Storagelayer, Applicationlayer und 
+Pr&#228;sentationlayer umfasst.
+Alle Schichten sind voneinander entkoppelt und k&#246;nnen auf verschiedenen 
+Rechnern laufen.
+F&#252;r unvernetzte Arbeitspl&#228;tze steht DeepaMehta auch als monolithische 
+Applikation zur Verf&#252;gung, die praktisch Client und Server integriert, 
+wobei die Kommunikation &#252;ber native Methoden-Aufrufe erfolgt und kein 
+TCP Port offen ist.
+
+Den Kern stellt ein Application Server dar.
+Anwendungen werden im Rahmen des DeepaMehta Application Frameworks 
+entwickelt und laufen auf Serverseite.
+
+Der Graphische Topic Map Client ist ein Thin Client, der nur 
+Darstellungslogik enth&#228;lt.
+Die Benutzung des Topic Map Clients erfordert keinen Download und keine 
+Installation und Konfiguration. Ein Java-f&#228;higer Webbrowser gen&#252;gt.
+
+Der Graphische Topic Map Client ist nur ein m&#246;gliches DeepaMehta 
+Frontend.
+Der DeepaMehta Application Server enth&#228;lt auch eine 
+Web-Publishing-Engine, mittels der herk&#246;mmliche Webfrontends generiert 
+werden k&#246;nnen. D.h. DeepaMehta-Anwendungen und DeepaMehta-Content kann 
+&#252;ber eine Webschnittstelle serviert werden. Die Pr&#228;sentation unterliegt 
+dann den Webparadigmen -- HTML Seiten, Links, Formulare -- interaktive 
+graphische Topic Map Darstellungen sind dann nicht m&#246;glich. Das 
+Arbeiten mit Web-Frontends funktioniert mit jedem Webbrowser. Auf 
+Client-Seite ist kein Java erforderlich.
+
+In der Praxis kommen h&#228;ufig hybride DeepaMehta-Anwendungen vor: 
+graphische Topic Map Frontends und Webfrontends werden gleichzeitig 
+benutzt.
+Manche Benutzerrollen, z.B. Administor, werden &#252;ber den graphischen 
+Client realisier, andere Benutzerrollen &#252;ber Webfrontends.
+
+
+=&gt; Kann DeepaMehta mit gro&#223;en Datenmengen umgehen?
+
+Konzeptionell kann das Corporate Memory Millionen von Topics und 
+Assoziationen enthalten, auf denen Tausende von Usern und 
+Arbeitsgruppen parallel arbeiten k&#246;nnen.
+Der schnelle Zugriff wird durch Datenbank-Indizes erm&#246;glicht.
+
+In der Praxis wurde bisher kein Limit bez&#252;glich der Datenmenge 
+erreicht. Die gr&#246;&#223;te DeepaMehta-Installation (www.kiezatlas.de) besteht 
+bisher aus etwa 35.000 Topics und 35.000 Assoziationen (Stand: Juli 
+2006).
+
+Im Rahmen grenzenloser Skalierbarkeit werden in Zukunft Cluster- und 
+Peer-To-Peer Konzepte ins Spiel kommen. Die Storage-Architektur wird 
+mit den Anforderungen wachsen.
+
+
+=&gt; Ist die DeepaMehta Visualisierung f&#252;r gro&#223;e Datenmengen geeignet?
+
+Das Corporate Memory ist potentiell unendlich gro&#223; und kann seiner 
+Gesamtheit nicht visualsiert werden. Das ist auch nicht n&#246;tig.
+
+Der Punkt ist: Sichten auf das Corporate Memory sind _immer_ 
+pers&#246;nliche Sichten des Benutzers. Benutzer holen sich aus dem 
+Corporate die Ausschnitte hoch, die in einem konkreten _Arbeitskontext_ 
+relevant sind. Benutzer bestimmen selbst, was sie sehen wollen, wie sie 
+es sehen wollen, und was sie _nicht_ sehen wollen. Benutzer sind frei 
+sich f&#252;r jeden beliebigen Arbeitskontext eine neue Sicht anzulegen. 
+Jeder Topic kann potentiell in jeder Sicht erscheinen. Benutzer legen 
+somit selbst fest, was ein Kontext ist.
+
+DeepaMehta Benutzer legen die Anordnung der Topics und Assoziationen 
+selbst fest. Topics, die nicht von Interesse blendet der Benutzer aus. 
+Sie bleiben vorhanden, sind nur nicht in Sichtweite des Benutzers. 
+Benutzer m&#252;ssen niemals etwas speichern. Alles bleibt dort, wo es ist. 
+Der Benutzer kann seinen r&#228;umlichen Orientierungssinn benutzen, um 
+Dinge wiederzufinden. Topics werden zu mentalen Objekten. Das 
+DeepaMehta Topic Maps Frontend ist &quot;kognitiv kompatibel&quot;.
+
+
+=&gt; Wie ist der gegenw&#228;rtige Entwicklungsstand von DeepaMehta 
+einzusch&#228;tzen?
+
+DeepaMehta ist eine langfristige Bem&#252;hung von hohem vision&#228;ren 
+Character, und als solches nie fertig. Um dennoch n&#252;tzlich zu sein, 
+versucht DeepaMehta in Form konkreter Praxisanwendungen zu wachsen. 
+DeepaMehta ist keine Applikation mit einem klar umgrenzten 
+Einsatzgebiet, sondern ist eine Infrastruktur, man k&#246;nnte auch sagen 
+Betriebssystem. Es gibt eine klare Trennung zwischen der Infrastruktur 
+-- dem DeepaMehta Kern -- und den Anwendungen, die auf dieser 
+Infrastruktur aufbauen. Die Funktionalit&#228;t des Kerns wird mit jeder 
+konkreten Anwendung ausgebaut werden, und der dann leistungsf&#228;higere 
+Kern wird dann wiederum neue Anwendungen erm&#246;glichen. Das ist zwei 
+Entwicklungsprozesse, die sich gegenseitig hochschaukeln werden.
+
+DeepaMehta hat starkes Interesse, seine Leistungsf&#228;higkeit und seinen 
+Nutzen in realen Anwendungsprojekten zu beweisen. DeepaMehta ist kein 
+rein akademisches Projekt, sondern m&#246;chte reale Probleme realer 
+Menschen l&#246;sen. Die wichtigste DeepaMehta-Anwendung, die bereits seit 2 
+Jahren im Produktionseinsatz ist (Stand: Juli 2006), ist das 
+geographische Content Management Sytem &quot;Kiezatlas&quot; (www.kiezatlas.de)
+
+Die Funktionalit&#228;t von DeepaMehta ist an vielen Stellen unvollst&#228;ndig 
+und die Usability ist verbesserungsf&#228;hig. Andererseits kann man 
+DeepaMehta heute schon als Arbeitsplattform f&#252;r &quot;real world&quot;-Projekte 
+benutzen. An DeepaMehta werden derzeit diejenigen Anwender den meisten 
+Spa&#223; haben, die sich als &quot;Early Adopter&quot; sehen. Die also dabei sein 
+wollen, wo Innovatives entsteht, und die an diesem Proze&#223; teilnehmen 
+wollen.
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: homepage.txt
+Type: application/applefile
+Size: 1562 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment.bin">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment.bin</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: homepage.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment.txt</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: deepamehta.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0001.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0001.txt</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: FAQ.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0002.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0002.txt</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: intro.txt
+Type: application/applefile
+Size: 1559 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0001.bin">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0001.bin</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: intro.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0003.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0003.txt</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: plan.txt
+Type: application/applefile
+Size: 1534 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0002.bin">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0002.bin</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: plan.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0004.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0004.txt</A>&gt;
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: fragen.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0005.txt">https://lists.berlios.de/pipermail/deepamehta-users/attachments/20080429/049cac12/attachment-0005.txt</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000137.html">[deepamehta-users] A new wiki, but what`s next?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#138">[ date ]</a>
+              <a href="thread.html#138">[ thread ]</a>
+              <a href="subject.html#138">[ subject ]</a>
+              <a href="author.html#138">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

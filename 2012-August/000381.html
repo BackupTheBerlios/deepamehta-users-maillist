@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Status update and release plan
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2012-August/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Status%20update%20and%20release%20plan&In-Reply-To=%3C73082527-E9F9-49E1-850D-88EC9271EF98%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000382.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Status update and release plan</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Status%20update%20and%20release%20plan&In-Reply-To=%3C73082527-E9F9-49E1-850D-88EC9271EF98%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Status update and release plan">jri at deepamehta.de
+       </A><BR>
+    <I>Mon Aug 20 03:13:28 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000382.html">[deepamehta-users] Status update and release plan
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#381">[ date ]</a>
+              <a href="thread.html#381">[ thread ]</a>
+              <a href="subject.html#381">[ subject ]</a>
+              <a href="author.html#381">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Dear DeepaMehta aficionados,
+
+please excuse the delay of the DeepaMehta 4.0.12 release and the silence on this list. Here I like to provide you with a status update and release plan.
+
+Currently we are working on 2 real (contract) DeepaMehta applications:
+1) Poemspace Mailer: an email campaigning tool for the cultural area. Developed by Danny.
+2) EducationZEN: an E-Learning platform for Technische Universit&#228;t Berlin. Developed by Malte (he put a nice LaTeX renderer in DM's detail panel).
+Features required for these applications got high priority and somewhat dislocate us from our original release plan. But finally all these features will be included in the DeepaMehta 4.0.12 Standard Distribution.
+
+=&gt; The release of DeepaMehta 4.0.12 is planned for the end of August. Its highlight features comprise:
+
+* Access Control Foundation
+The basis for publication and collaborative work. Each topic and association is attached with an Access Control List (ACL). 5 roles are supported: Everyone, User, Member, Owner, Creator. In particular 2 scenarios are supported:
+	1) Public read-only topicmaps: make your content public. Everyone can interactively navigate and search your content, but without the possibility of changing anything.
+	2) Shared private installations: collaborate with your team while being invisible to the public.
+However, 4.0.12 only lays the foundation. Access Control will be more elaborated e.g. in terms of user-configurability in the following releases.
+
+* Shared File Repository
+Create folders on the server. Upload files. Access files uploaded by others.
+
+* Backend Security
+The REST API is secured. Each request must pass the filter chain for authorization.
+
+* Improvements for plugin developers
+A lot of changes in the development framework eases and speeds up plugin development. Highlights comprise:
+	1) true hot-deployment: once a plugin is re-compiled the OSGi runtime shuts it (and only it) down and redeploys it automatically. All dependencies to other plugins are handled by the DM framework.
+	2) all software components like plugins and custom renderers are namespaced for friendly co-existence.
+	3) More &quot;convention over configuration&quot;: E.g. scripts, services, renderers, and stylesheets are picked up automatically. This results in a much more &quot;dynamic&quot; feeling (as Danny puts it :-)
+
+
+In parallel the developers documentation is in progress. Danny is about to adapt the DM3 development guide to the current state of DM4:
+<A HREF="https://trac.deepamehta.de/wiki/PluginDevelopmentGuide">https://trac.deepamehta.de/wiki/PluginDevelopmentGuide</A>
+
+
+Further release planning:
+After 4.0.12, we want make the step to 4.1
+The 4.1 version is aimed to end the &quot;experimental&quot; status of DeepaMehta. For you, the users, it means you can start doing &quot;real&quot; work with DeepaMehta. Your data will migrate automatically to future versions of DeepaMehta.
+
+Because of the various job-sites mentioned above I'm little hesitant with release dates for the moment.
+But I'm pretty sure DeepaMehta 4.1 will make it within 2012.
+
+Cheers,
+J&#246;rg
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000382.html">[deepamehta-users] Status update and release plan
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#381">[ date ]</a>
+              <a href="thread.html#381">[ thread ]</a>
+              <a href="subject.html#381">[ subject ]</a>
+              <a href="author.html#381">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] DeepaMehta 4.0.1 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%204.0.1%20released&In-Reply-To=%3CDC4A4E83-E1DB-4524-967A-18B19D5F0A5E%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000342.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] DeepaMehta 4.0.1 released</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20DeepaMehta%204.0.1%20released&In-Reply-To=%3CDC4A4E83-E1DB-4524-967A-18B19D5F0A5E%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] DeepaMehta 4.0.1 released">jri at deepamehta.de
+       </A><BR>
+    <I>Thu Jul 28 20:20:00 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000342.html">[deepamehta-users] DeepaMehta 4.0 released
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi,
+
+on July 28, 2011 DeepaMehta 4.0.1 has been released.
+
+This release fixes a bug: when editing an association (e.g. retyping) the role types are not compromised.
+
+Thanks Malte for reporting!
+
+You can update a 4.0 installation while keeping your content, however a 4.0.1 clean install is recommended (see note below).
+See the README for update instructions (scroll down).
+<A HREF="https://github.com/jri/deepamehta">https://github.com/jri/deepamehta</A>
+
+Download the release:
+<A HREF="https://github.com/downloads/jri/deepamehta/deepamehta-4.0.1.zip">https://github.com/downloads/jri/deepamehta/deepamehta-4.0.1.zip</A>
+
+Build from Source:
+<A HREF="https://trac.deepamehta.de/wiki/BuildFromSource">https://trac.deepamehta.de/wiki/BuildFromSource</A>
+
+For reporting issues please register at our new trac-site:
+<A HREF="https://trac.deepamehta.de">https://trac.deepamehta.de</A>
+
+Cheers,
+J&#246;rg
+
+
+--------------------
+
+Technical note 1:
+
+In DeepaMehta 4.0.1 the data model has slightly changed: Topic types are never used as role types anymore. Instead the new role type &quot;Default&quot; is used. The existing 4.0 type definitions in the DB are not migrated. However, the 4.0.1 application code is compatible with the 4.0 model.
+
+Affected are the following association semantics:
+    - Core: data type assignment of a topic/association type
+    - Core: index mode assignment of a topic/association type
+    - Topicmaps: topic/association assignments of a topicmap
+    - Workspaces: topic/type assignments of a workspace
+
+CAUTION when editing such an association that was created with 4.0:
+In this situation you must set role type &quot;Default&quot; manually for the correct association end.
+Otherwise the respective association gets corrupted.
+
+For associations newly created in 4.0.1 there is no issue.
+
+
+Technical note 2:
+
+These 3rd party components are updated in 4.0.1:
+- Jersey 1.5 -&gt; 1.8
+- Jettison 1.2 -&gt; 1.3
+- Neo4j Mehtagraph 0.7 -&gt; 0.8
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000342.html">[deepamehta-users] DeepaMehta 4.0 released
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

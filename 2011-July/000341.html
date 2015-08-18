@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] 1st release candidate of DeepaMehta 4.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%201st%20release%20candidate%20of%20DeepaMehta%204.0&In-Reply-To=%3C319D277B-B7EA-480F-88BA-2F937F3A8572%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000342.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] 1st release candidate of DeepaMehta 4.0</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%201st%20release%20candidate%20of%20DeepaMehta%204.0&In-Reply-To=%3C319D277B-B7EA-480F-88BA-2F937F3A8572%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] 1st release candidate of DeepaMehta 4.0">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Jul 20 17:54:10 CEST 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000342.html">[deepamehta-users] DeepaMehta 4.0 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#341">[ date ]</a>
+              <a href="thread.html#341">[ thread ]</a>
+              <a href="subject.html#341">[ subject ]</a>
+              <a href="author.html#341">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi,
+
+today the 1st release candidate of DeepaMehta 4.0 has been released.
+
+This is the first release with the all-new property-less data model as recently described:
+<A HREF="https://groups.google.com/group/deepamehta3/browse_thread/thread/a77704d35e7af539">https://groups.google.com/group/deepamehta3/browse_thread/thread/a77704d35e7af539</A>&gt;
+
+The version planned as &quot;DeepaMehta 3 v0.5&quot; now become &quot;DeepaMehta 4.0&quot;.
+From now on DeepaMehta's version numbers follow the classic *major*.*minor*.*bugfix* schema.
+
+Improvements for users:
+- new type editor. All values are represented as reusable semantics-attached topics.
+- new topic type &quot;Resource&quot; to collect web resources
+- new icons
+- bug fix in topicmap handling (when you have multiple topicmaps open)
+- cleaner display, less clutter
+
+The cleaner display is because not all the plugins (workspaces, time, access control, ...) are adapted to the new data model so far. So, for the moment there is not so much meta data displayed (timestamps, workspaces assignments, creator, modifier,  ...).
+
+Improvement for developers:
+- New core service API. All the domain objects (Topic, Association, ...) are attached to the database. So, the developer must not care about DB-updates.
+- Domain models (type definitions) provided by a plugin can be build upon the domain models provided by other plugins. The dependencies are handled by the framework.
+
+Download the release:
+<A HREF="https://github.com/downloads/jri/deepamehta/deepamehta-4.0.RC1.zip">https://github.com/downloads/jri/deepamehta/deepamehta-4.0.RC1.zip</A>
+Start as usual via the provided startscripts.
+
+Build from Source:
+<A HREF="https://github.com/jri/deepamehta/wiki/Build-From-Source">https://github.com/jri/deepamehta/wiki/Build-From-Source</A>
+
+For further information see the README (scroll down):
+<A HREF="https://github.com/jri/deepamehta">https://github.com/jri/deepamehta</A>
+
+Troubleshooting:
+If the browser shows 404 while this exception appears in the terminal ...
+	com.sun.jersey.api.container.ContainerException: No WebApplication provider is present
+... then refresh the HTTP Jetty Bundle by typing &quot;refresh 1&quot; in the terminal (checkout the proper bundle ID before by using the &quot;lb&quot; command).
+
+
+Thanks go to J&#252;rgen and Danny who helped to organize this release.
+
+Cheers,
+J&#246;rg
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000342.html">[deepamehta-users] DeepaMehta 4.0 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#341">[ date ]</a>
+              <a href="thread.html#341">[ thread ]</a>
+              <a href="subject.html#341">[ subject ]</a>
+              <a href="author.html#341">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

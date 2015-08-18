@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Backup from 4.0.6 and 4.0.7
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Backup%20from%204.0.6%20and%204.0.7&In-Reply-To=%3CBFA70E82-FC1E-433F-BD26-B590A14E6D8F%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000359.html">
+   <LINK REL="Next"  HREF="000361.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Backup from 4.0.6 and 4.0.7</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Backup%20from%204.0.6%20and%204.0.7&In-Reply-To=%3CBFA70E82-FC1E-433F-BD26-B590A14E6D8F%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Backup from 4.0.6 and 4.0.7">jri at deepamehta.de
+       </A><BR>
+    <I>Fri Jan 20 18:03:52 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000359.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+        <LI>Next message: <A HREF="000361.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#360">[ date ]</a>
+              <a href="thread.html#360">[ thread ]</a>
+              <a href="subject.html#360">[ subject ]</a>
+              <a href="author.html#360">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Asif,
+
+no, without further effort you can't use the 4.0.6 content in 4.0.7.
+(DM4 is still considered &quot;unstable&quot; and not ready for production.)
+
+However, you can migrate your content manually by executing the following steps (you'll need a terminal and the curl tool). After migration your content is available in 4.0.7 exactly as created in 4.0.6:
+
+
+1) Stop all DeepaMehta instances.
+
+2) Copy the deepamehta-db folder from &quot;deepamehta-4.0.6&quot; to &quot;deepamehta-4.0.7&quot;
+
+3) Start DM 4.0.7
+
+4) Your topicmaps do NOT appear and the browser's JavaScipt console shows 2 errors:
+   =&gt; UnknownCanvasRendererError: canvas renderer &quot;undefined&quot; is not registered
+   =&gt; GET <A HREF="http://localhost:8080/images/bucket.png">http://localhost:8080/images/bucket.png</A> 404 (Not Found)
+If more than these 2 or other errors appear clean the browser's cache by pressing reload twice or by shift-reload.
+
+
+Now go to a terminal. You'll need the curl tool to be installed.
+
+5) Find the &quot;Renderer URI&quot; topics of each existing topicmap:
+   curl localhost:8080/core/topic/by_type/dm4.topicmaps.topicmap_renderer_uri
+Response:
+   {&quot;total_count&quot;:2,&quot;items&quot;:[
+   {&quot;id&quot;:2569,&quot;uri&quot;:&quot;&quot;,&quot;value&quot;:&quot;dm4.webclient.canvas_renderer&quot;,&quot;type_uri&quot;:&quot;dm4.topicmaps.topicmap_renderer_uri&quot;,&quot;composite&quot;:{}},
+   {&quot;id&quot;:2396,&quot;uri&quot;:&quot;&quot;,&quot;value&quot;:&quot;dm4.webclient.canvas_renderer&quot;,&quot;type_uri&quot;:&quot;dm4.topicmaps.topicmap_renderer_uri&quot;,&quot;composite&quot;:{}}
+   ]}
+Here, 2 topicmaps are found with their &quot;Renderer URI&quot; topic IDs 2569 and 2396.
+
+6) Change values of each &quot;Renderer URI&quot; topic:
+   curl -X PUT -H Content-Type:application/json -d '{id: 2569, value: &quot;dm4.webclient.topicmap_renderer&quot;}' localhost:8080/core/topic
+   curl -X PUT -H Content-Type:application/json -d '{id: 2396, value: &quot;dm4.webclient.topicmap_renderer&quot;}' localhost:8080/core/topic
+
+7) Find out ID of toic type &quot;dm4.topicmaps.topicmap_renderer_uri&quot;:
+   curl localhost:8080/core/topic/by_value/uri/dm4.topicmaps.topicmap_renderer_uri
+Response:
+   {&quot;id&quot;:1472,&quot;uri&quot;:&quot;dm4.topicmaps.topicmap_renderer_uri&quot;,&quot;value&quot;:&quot;Topicmap Renderer URI&quot;,&quot;type_uri&quot;:&quot;dm4.core.topic_type&quot;,&quot;composite&quot;:{}}
+Here, the ID is 1472
+
+8) Change URI and name of that topic type:
+   curl -X PUT -H Content-Type:application/json -d '{id: 1472, uri: &quot;dm4.topicmaps.canvas_renderer_uri&quot;, value: &quot;Canvas Renderer URI&quot;}' localhost:8080/core/topic
+
+
+Now a 2nd issue:
+
+9) Find out ID of the &quot;Search&quot; type's &quot;dm4.webclient.icon&quot; config topic:
+   curl localhost:8080/core/topictype/dm4.webclient.search
+Response:
+{&quot;id&quot;:518,&quot;uri&quot;:&quot;dm4.webclient.search&quot;,&quot;value&quot;:&quot;Search&quot;,&quot;type_uri&quot;:&quot;dm4.core.topic_type&quot;,&quot;composite&quot;:{},&quot;data_type_uri&quot;:&quot;dm4.core.composite&quot;,&quot;index_mode_uris&quot;:[],&quot;assoc_defs&quot;:[{&quot;id&quot;:523,&quot;uri&quot;:&quot;dm4.webclient.search_term&quot;,&quot;assoc_type_uri&quot;:&quot;dm4.core.composition_def&quot;,&quot;whole_topic_type_uri&quot;:&quot;dm4.webclient.search&quot;,&quot;part_topic_type_uri&quot;:&quot;dm4.webclient.search_term&quot;,&quot;whole_role_type_uri&quot;:&quot;dm4.core.whole&quot;,&quot;part_role_type_uri&quot;:&quot;dm4.core.part&quot;,&quot;whole_cardinality_uri&quot;:&quot;dm4.core.one&quot;,&quot;part_cardinality_uri&quot;:&quot;dm4.core.one&quot;,&quot;view_config_topics&quot;:[]},{&quot;id&quot;:533,&quot;uri&quot;:&quot;dm4.webclient.search_result&quot;,&quot;assoc_type_uri&quot;:&quot;dm4.core.composition_def&quot;,&quot;whole_topic_type_uri&quot;:&quot;dm4.webclient.search&quot;,&quot;part_topic_type_uri&quot;:&quot;dm4.webclient.search_result&quot;,&quot;whole_role_type_uri&quot;:&quot;dm4.core.whole&quot;,&quot;part_role_type_uri&quot;:&quot;dm4.core.part&quot;,&quot;whole_cardinality_uri&quot;:&quot;dm4.core.one&quot;,&quot;part_cardinality_uri&quot;:&quot;dm4.core.one&quot;,&quot;view_config_topics&quot;:[]}],&quot;label_config&quot;:[],&quot;view_config_topics&quot;:[{&quot;id&quot;:557,&quot;uri&quot;:&quot;&quot;,&quot;value&quot;:&quot;\/images\/bucket.png&quot;,&quot;type_uri&quot;:&quot;dm4.webclient.view_config&quot;,&quot;composite&quot;:{&quot;dm4.webclient.icon&quot;:{&quot;id&quot;:560,&quot;uri&quot;:&quot;&quot;,&quot;value&quot;:&quot;\/images\/bucket.png&quot;,&quot;type_uri&quot;:&quot;dm4.webclient.icon&quot;,&quot;composite&quot;:{}}}}]}
+
+Here, the ID of the &quot;dm4.webclient.icon&quot; config topic is 560 (look from the end)
+
+10) Change the value of that config topic:
+   curl -X PUT -H Content-Type:application/json -d '{id: 560, value: &quot;/images/balls.png&quot;}' localhost:8080/core/topic
+
+You're done.
+
+
+11) Restart DeepaMehta 4.0.7
+   That is, stop the DM server by Ctrl-C and then run the usual DM start script.
+
+Now, all your topicmaps and contents should be available exactly as created by DM 4.0.6
+
+
+Cheers,
+J&#246;rg
+
+
+
+On Jan 20, 2012, at 5:44, Asif M wrote:
+
+&gt;<i> Hi ,
+</I>&gt;<i> 
+</I>&gt;<i> Is backup from 4.0.6 and import to 4.0.7 supported?
+</I>&gt;<i> 
+</I>&gt;<i> By backup I mean does 4.0.7 support the datamodel of 4.0.6 - if i just copy the database folder will it work?
+</I>&gt;<i> 
+</I>&gt;<i> Regards,
+</I>&gt;<i> Asif
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> deepamehta-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">deepamehta-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/deepamehta-users">https://lists.berlios.de/mailman/listinfo/deepamehta-users</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000359.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+	<LI>Next message: <A HREF="000361.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#360">[ date ]</a>
+              <a href="thread.html#360">[ thread ]</a>
+              <a href="subject.html#360">[ subject ]</a>
+              <a href="author.html#360">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

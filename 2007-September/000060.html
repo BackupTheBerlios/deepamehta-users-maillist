@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Neues in der DeepaMehta-Hauptentwicklungslinie
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Neues%20in%20der%20DeepaMehta-Hauptentwicklungslinie&In-Reply-To=%3C0476ce596a092712c37903292f3e6dd5%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000059.html">
+   <LINK REL="Next"  HREF="000061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Neues in der DeepaMehta-Hauptentwicklungslinie</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Neues%20in%20der%20DeepaMehta-Hauptentwicklungslinie&In-Reply-To=%3C0476ce596a092712c37903292f3e6dd5%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Neues in der DeepaMehta-Hauptentwicklungslinie">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Sep 26 16:33:47 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000059.html">[deepamehta-users] Donnerstag,	20.9.: ECLECTIC SOUNDS FROM THE UNDERGROUND
+</A></li>
+        <LI>Next message: <A HREF="000061.html">[deepamehta-users] Neues in der	DeepaMehta-Hauptentwicklungslinie
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Liebe DeepaMehta-Entwickler und -Anwender,
+
+Montag, der 17.9. war ein historischer Tag in der 
+DeepaMehta-Entwicklung: Enrico und ich haben unsere beiden 
+Entwicklungszweige (branches) zusammengef&#252;hrt (gemergt). Damit befinden 
+sich jetzt alle Features, an denen Enrico und ich in den letzten Wochen 
+gearbeitet haben, in der DeepaMehta-Hauptentwicklungslinie (trunk) und 
+stehen f&#252;r Entwickler und ambitionierte Anwender im 
+Berlios-SVN-Repository zur Verf&#252;gung.
+<A HREF="http://developer.berlios.de/projects/deepamehta/">http://developer.berlios.de/projects/deepamehta/</A>
+
+Neue Features f&#252;r Anwender:
+- Erheblich vereinfachte DeepaMehta-Installation
+- Neue Anwendung: Gruppenkalender
+
+Neue Features f&#252;r Entwickler und Administratoren:
+- Verbessertes Configuration-Management
+- Verbesserter Build- und Deploy Proze&#223;
+
+DeepaMehta setzt nun KEINE MySQL-Installation, und auch KEINE 
+Ant-Installation mehr voraus. Es waren gerade diese beiden 
+Voraussetzungen, die eine DeepaMehta-Installation f&#252;r Normal-Anwender 
+sehr schwer machten.
+
+Standardm&#228;&#223;ig wird nun die HSQL-Datenbank eingesetzt. Das ist eine 
+reine Java-Datenbank, die mit DeepaMehta mitgeliefert wird und keine 
+separate Installation erfordert. Der Benutzer braucht sich also nicht 
+mehr mit einer Datenbank-Installation zu befassen. Wer m&#246;chte, kannn 
+weiterhin MySQL (Version 4 oder 5) benutzen. Die zu verwendenene 
+Datenbank kann beim Aufsetzen einer DeepaMehta-Instanz gew&#228;hlt werden. 
+Mit Derby befindet sich bereits eine dritte m&#246;gliche Datenbank im 
+Experimentierbetrieb.
+
+Die DeepaMehta-Installation erfolgt nun nicht mehr &#252;ber Ant, sondern 
+&#252;ber ein Shellscript (das seinerseits das mit DeepaMehta mitgelieferte 
+ant aufruft). Der Benutzer braucht sich also nicht mehr mit der 
+Ant-Installation zu befassen. Das Shellskript dient au&#223;erdem dazu, 
+weitere DeepaMehta-Instanzen zu konfigurieren und den Build-Proze&#223; zu 
+unterst&#252;tzen. Anwendungen brauchen nicht l&#228;nger separat gebuildet und 
+deployt werden, sondern k&#246;nnen in den globalen DeepaMehta-Build- und 
+Deploy-Prozess miteinbezogen werden.
+
+Auch das Zwischenergebnis meiner eigenen Entwicklungsarbeit der letzten 
+Wochen steht im trunk zur Verf&#252;gung: Gruppenkalender. Kalender zeigen 
+die Events einer Gruppe von Personen an, als automatisch generierte 
+tabellarische Wochen- oder Monatsansicht, die von au&#223;en &#252;ber 
+CSS-Stylesheets gestaltet werden kann. Events sind als Topics 
+repr&#228;sentiert und k&#246;nnen mit anderen Topics in Bezug gesetzt werden. 
+Die Gruppenkalender-Anwendung stellt eine wesentliche Aufwertung der 
+DeepaMehta-Kollaborationsfunktionen dar.
+
+Die n&#228;chste offizielle DeepaMehta-Release (2.0b8), die dann als 
+Download auch f&#252;r Normal-Anwender zur Verf&#252;gung steht, ist f&#252;r Dezember 
+2007 geplant.
+
+Gr&#252;&#223;e
+J&#246;rg Richter (CTO)
+
+www.deepamehta.de
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000059.html">[deepamehta-users] Donnerstag,	20.9.: ECLECTIC SOUNDS FROM THE UNDERGROUND
+</A></li>
+	<LI>Next message: <A HREF="000061.html">[deepamehta-users] Neues in der	DeepaMehta-Hauptentwicklungslinie
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

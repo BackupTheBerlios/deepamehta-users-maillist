@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Frage bez&#252;glich Import Export
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-1%3Fq%3FFrage_bez%3DFCglich_Import_Export%3F%3D&In-Reply-To=%3Cd2e3bc42e8f073f51a62ebc183c34b86%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000174.html">
+   <LINK REL="Next"  HREF="000177.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Frage bez&#252;glich Import Export</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%0A%20%3D%3Fiso-8859-1%3Fq%3FFrage_bez%3DFCglich_Import_Export%3F%3D&In-Reply-To=%3Cd2e3bc42e8f073f51a62ebc183c34b86%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Frage bez&#252;glich Import Export">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Jul 30 14:16:37 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000174.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+        <LI>Next message: <A HREF="000177.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Lieber Torsten,
+
+ich freue mich, da&#223; Du so aktiv mit DeepaMehta bist, und auch &#252;ber Dein 
+Feedback und Deine Wiki-Aktivit&#228;t!
+Danke an Malte, f&#252;r die Hilfestellungen!
+
+Torsten schrieb:
+&gt;&gt;<i> Irgendwie bin ich davon ausgegangen, dass unterliegende 
+</I>&gt;&gt;<i> Voraussetzungen f&#252;r eine Topic Map aus dem Corporate Memory mit 
+</I>&gt;&gt;<i> exportiert w&#252;rden.
+</I>
+So ist es auch!
+(und nach meinem Kenntinisstand funktioniert es auch so :-)
+Eine Export-Datei ist v&#246;llig &quot;self-contained&quot;, d.h. sie enth&#228;lt alles, 
+was notwendig ist, um die Topic Map in einem anderen Corporate Memory 
+zu rekonstruieren: insbesobdere geh&#246;ren die Typ-Defintionen dazu (und 
+auch Icon-Dateien und Dokumente).
+
+Beachte: beim Exportieren sollte die Typ-Definition (Type-Topics, 
+Derivations, Properties usw.) _nicht_ aufgedeckt sein. Die 
+Typ-Definitionen werden n&#228;mlich _automatisch_ exportiert. Wenn sie 
+zus&#228;tzlich auch in der Map aufgedeckt sind, kann es zu &quot;Verwechslungen&quot; 
+kommen. Ich nehme an, da&#223; Dir das passiert ist.
+
+Malte schrieb:
+&gt;<i> [...] Zus&#228;tzlich werden Inhalte die vom selben Typ sind und den selben 
+</I>&gt;<i> Namen haben im vorhandenen Corporate Memory ohne Warnung mit den 
+</I>&gt;<i> Neu-Importierten Daten &#252;berschrieben.
+</I>
+Das ist nicht ganz richtig. Topics die bereits vorhanden sind -- was 
+anhand des Typ-Namens und des Topic-Namens ermittelt wird, wie Malte 
+richtig sagt -- werden beim Importieren nicht &#252;berschrieben, sondern 
+_ignoriert_!
+
+Thorsten schrieb:
+&gt;&gt;<i> Wenn ich das Konzept verstanden habe m&#252;sste ich eigentlich nicht nur 
+</I>&gt;&gt;<i> eine Topic Map (also meinen View) exportieren, sondern den Inhalt des 
+</I>&gt;&gt;<i> Corporate Memories bez&#252;glich eines Workspaces ....?
+</I>
+In der Tat! Auch ich w&#252;nsche mir genau diese Funktion (Impot-Export 
+eines kompletten Workspaces) schon lange :-)
+
+Allgemeines zur Inport-Export-Funktionalit&#228;t:
+Dieses Feature ist derzeit als experimentell anzusehen und mit Vorsicht 
+zu geniessen :-) Wozu es dezeit haupts&#228;chlich taugt, ist der 
+_einmalige_ Transfer einer Map von ein CM in ein anderes. Wozu es 
+derzeit noch nicht wirklich taugt, ist das _fortlaufende_ Updaten von 
+Maps (resp. Synchronisation zweier CM's). Da&#223; es zum fortlaufenden 
+Update nicht (oder nur in Sonderf&#228;llen) geeignet ist, h&#228;ngt im Moment 
+haupts&#228;chlich damit zusammen, da&#223; beim Importieren bereits vorhandene 
+Topics ignoriert werden (wie oben beschrieben).
+
+Die derzeit g&#228;ngige Methode um 2 CM's zu synchronieren, ist, einen 
+kompletten Datenbank-Dump zu &#252;berspielen. Von MySQL zu MySQL hab ich 
+das schon oft gemacht, mit Hilfe des mysqldump-Tools (das Einspielen 
+des Dumps kann mit dem mysql-Konsolenclient in Verbindung mit 
+Eingabeumlenkung erfolgen, oder mittels des &quot;patchdb&quot;-Targets des 
+DeepaMehta run-Skripts). Mit HSQL hab' ich nicht so viel Erfahrung, und 
+soweit ich wei&#223; ist in der DM-Distribution kein HSQL-Dump-Tool 
+enthalten, existiert aber ganz bestimmt. Allerdings k&#246;nnte ich mir 
+vorstellen, da&#223; es Probleme beim Einspielen eines HSQL-Dumps in eine 
+MySQL-Datenbank gibt.
+
+Alles in Allem, ist also bei DeepaMehta der (teilweise) Abgleich 
+mehrerer CM's derzeit ein etwas trauriges Feld. Meine derzeitige 
+Empfehlung f&#252;r Dich Torsten: beide CM's unter MySQL laufen lassen, und 
+per Dump synchronisieren.
+
+Torsten, ich w&#252;rde mich freuen, wenn f&#252;r Deine Anwendung der 
+DeepaMehta-Nutzen den -Frust &#252;berwiegt, und wir den Weg gemeinsam 
+weitergehen. Als Licht am Horizont sehe ich interaktive 
+&#246;ffentlich-zug&#228;ngliche Topic Maps &#252;ber Chinesische Medizin.
+
+Gr&#252;&#223;e
+J&#246;rg R.
+
+www.deepamehta.de
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000174.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+	<LI>Next message: <A HREF="000177.html">[deepamehta-users] Frage bez&#252;glich Import Export
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#175">[ date ]</a>
+              <a href="thread.html#175">[ thread ]</a>
+              <a href="subject.html#175">[ subject ]</a>
+              <a href="author.html#175">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>

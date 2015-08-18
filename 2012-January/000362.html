@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [deepamehta-users] Backup from 4.0.6 and 4.0.7
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/deepamehta-users/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Backup%20from%204.0.6%20and%204.0.7&In-Reply-To=%3CD23B4AB2-3002-435B-B83C-4EA38CBB5D09%40deepamehta.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000361.html">
+   <LINK REL="Next"  HREF="000363.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[deepamehta-users] Backup from 4.0.6 and 4.0.7</H1>
+    <B>J&#246;rg Richter</B> 
+    <A HREF="mailto:deepamehta-users%40lists.berlios.de?Subject=Re%3A%20%5Bdeepamehta-users%5D%20Backup%20from%204.0.6%20and%204.0.7&In-Reply-To=%3CD23B4AB2-3002-435B-B83C-4EA38CBB5D09%40deepamehta.de%3E"
+       TITLE="[deepamehta-users] Backup from 4.0.6 and 4.0.7">jri at deepamehta.de
+       </A><BR>
+    <I>Wed Jan 25 19:45:52 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000361.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+        <LI>Next message: <A HREF="000363.html">[deepamehta-users] Web Resource URL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#362">[ date ]</a>
+              <a href="thread.html#362">[ thread ]</a>
+              <a href="subject.html#362">[ subject ]</a>
+              <a href="author.html#362">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Asif,
+
+do you proceed with your data migration?
+
+
+On Jan 22, 2012, at 18:01, Asif M wrote:
+
+&gt;<i> The first part has been mostly successful with some minor modifications.
+</I>&gt;<i>  
+</I>&gt;<i> @ Step 6
+</I>&gt;<i> [...]
+</I>&gt;<i> similar changes in for Step 8
+</I>
+Yes, the topic IDs found out in steps 5 and 7 are supposed to feed into steps 6 resp. 8.
+Good you found out despite my dense instructions :-)
+
+&gt;<i> for the bucket icon changes in the search tools - this did not succeed at all..
+</I>&gt;<i>  
+</I>&gt;<i> The command i executed is
+</I>&gt;<i> curl -X PUT -H Content-Type:application/json -d '{id:560,value:&quot;/images/balls.png&quot;}' localhost:10111/core/topic
+</I>&gt;<i> but curl complains for missing value --
+</I>&gt;<i> I can imagine that curl has a problem in accepting the &quot;/&quot; in the file path for icon. Since I am running this on Windows, could be a windows specific issue.
+</I>
+Yes, the / might be the culprit here. So, you have to escape it.
+In Linux and MacOSX shells that is done by these ' and &quot; characters.
+Apparently on the DOS prompt escaping works different but I don't know how, sorry.
+Can a Windows adept help here?
+
+Cheers,
+J&#246;rg
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000361.html">[deepamehta-users] Backup from 4.0.6 and 4.0.7
+</A></li>
+	<LI>Next message: <A HREF="000363.html">[deepamehta-users] Web Resource URL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#362">[ date ]</a>
+              <a href="thread.html#362">[ thread ]</a>
+              <a href="subject.html#362">[ subject ]</a>
+              <a href="author.html#362">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/deepamehta-users">More information about the deepamehta-users
+mailing list</a><br>
+</body></html>
